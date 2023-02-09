@@ -2,10 +2,9 @@ export const storeConfig = {
   storeName: "Food Things",
   supportEmail: "support@foodthings.shop",
   description:
-    "Our store offers a wide range of food-themed clothing and accessories that are perfect for any foodie. From graphic tees to aprons, hoodies, and even stickers, we have everything you need to express your passion for good, bad, and weird eats. Browse our collection and add some flavor to your wardrobe with Food Things.",
+    "We offer a wide variety of food-themed clothing and accessories that are perfect for any foodie. From graphic tees to aprons, hoodies, bags, and even stickers, we have everything you need to express your passion for good, bad, and weird eats. Browse our collection and add some flavor to your wardrobe with Food Things.",
   logo: "/assets/logo.svg",
-  seoImage:
-    "https://littlebuilds.s3.us-east-1.amazonaws.com/fedup-seo-image.jpg",
+  seoImage: "https://littlebuilds.s3.us-east-1.amazonaws.com/seo-image.jpg",
   storeUrl: "https://foodthings.shop",
   featuredProductData: [
     {
@@ -14,7 +13,7 @@ export const storeConfig = {
         "good quality tees with weird things on them. what more could you ask for",
       productType: "tee",
       image: "https://littlebuilds.s3.us-east-1.amazonaws.com/banana-tee.webp",
-      buttonText: "shop tees",
+      buttonText: "shop tees"
     },
     {
       name: "hoodies",
@@ -22,7 +21,7 @@ export const storeConfig = {
         "wearing one of these hoodies is like wearing a hug. i need a hug so bad",
       productType: "hoodie",
       image: "https://littlebuilds.s3.us-east-1.amazonaws.com/c-d-tee.webp",
-      buttonText: "shop hoodies",
+      buttonText: "shop hoodies"
     },
     {
       name: "sweatshirts",
@@ -31,7 +30,7 @@ export const storeConfig = {
       productType: "sweatshirt",
       image:
         "https://littlebuilds.s3.us-east-1.amazonaws.com/fries-sweater.webp",
-      buttonText: "shop sweatshirts",
+      buttonText: "shop sweatshirts"
     },
     {
       name: "tanks",
@@ -39,7 +38,7 @@ export const storeConfig = {
         "the most fucked up looking and comfortable tanks on this website. guaranteed",
       productType: "tank",
       image: "https://littlebuilds.s3.us-east-1.amazonaws.com/fuck-tank.webp",
-      buttonText: "shop tanks",
+      buttonText: "shop tanks"
     },
     {
       name: "mugs",
@@ -47,7 +46,7 @@ export const storeConfig = {
         "bring one to the office and your boss will probably give you a raise. they're that good",
       productType: "mug",
       image: "https://littlebuilds.s3.us-east-1.amazonaws.com/nuggie-mug.webp",
-      buttonText: "shop mugs",
-    },
-  ],
-};
+      buttonText: "shop mugs"
+    }
+  ]
+}
