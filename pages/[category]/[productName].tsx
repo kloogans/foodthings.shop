@@ -200,7 +200,7 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
             </p>
 
             <button
-              className="snipcart-add-item w-full md:w-auto transition flex-shrink-0 py-2 px-4 border-4 border-black shadow-sm text-lg lg:text-xl font-medium bg-yellow-300 text-black hover:bg-yellow-400 focus:bg-yellow-400 focus:outline-none mb-4"
+              className="snipcart-add-item w-full md:w-auto transition flex-shrink-0 py-2 px-4 border-4 border-black shadow-sm text-lg lg:text-xl font-medium bg-secondary text-white hover:bg-rose-700 focus:bg-rose-700 focus:outline-none mb-4"
               data-item-id={activeVariantExternalId}
               data-item-price={activeVariant.retail_price}
               data-item-url={`/api/products/${activeVariantExternalId}`}

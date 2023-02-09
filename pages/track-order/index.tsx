@@ -62,13 +62,13 @@ const OrderPage = () => {
                 name="orderId"
                 type="text"
                 onChange={(e) => setOrderId(e.target.value)}
-                className="w-full p-4 text-xl text-zinc-700 placeholder:text-zinc-400 mb-2 border-4 border-black shadow-md outline-yellow-400"
+                className="w-full p-4 text-xl text-zinc-700 placeholder:text-zinc-400 mb-2 border-4 border-black shadow-md outline-secondary"
                 placeholder="FUCK1234"
               />
               <button
                 type="submit"
                 disabled={orderId.length < 1 || loading}
-                className="shadow-md w-full p-4 bg text-lg text-black bg-yellow-400 hover:bg-yellow-500 transition ease-in-out duration-200 border-4 disabled:opacity-60 border-black"
+                className="shadow-md w-full p-4 bg text-lg text-white bg-secondary hover:bg-rose-700 transition ease-in-out duration-200 border-4 disabled:opacity-60 border-black"
               >
                 {loading ? "loading..." : "track order"}
               </button>

@@ -2,7 +2,6 @@ export const ACCEPTED_PATHS = [
   "tees",
   "tanks",
   "hoodies",
-  "leggings",
   "sweatshirts",
   "mugs",
   "stickers",
@@ -11,5 +10,7 @@ export const ACCEPTED_PATHS = [
   "aop-tees",
   "aop-tanks",
   "aop-hoodies",
-  "aop-sweatshirts"
-]
+  "aop-sweatshirts",
+  "bags",
+  "stickers",
+];

@@ -48,6 +48,10 @@ const getProductBasePrice = (name: string) => {
       return 20;
     case "samsung case":
       return 20;
+    case "apron":
+      return 33;
+    case "bag":
+      return 35;
     default:
       return 20;
   }

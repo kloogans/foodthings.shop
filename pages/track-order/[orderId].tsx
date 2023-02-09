@@ -94,7 +94,7 @@ const OrderPage = ({ order }) => {
                 onLoadStart={() => setImageLoaded(false)}
                 onLoadingComplete={() => setImageLoaded(true)}
                 alt={name}
-                layout="fill"
+                fill
               />
             </div>
             <h1 className="text-2xl text-black text-center leading-none mb-1">
