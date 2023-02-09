@@ -1,20 +1,20 @@
-import Head from "next/head";
-import Script from "next/script";
-import { storeConfig } from "config/storeConfig";
+import Head from "next/head"
+import Script from "next/script"
+import { storeConfig } from "config/storeConfig"
 
-const { storeName, description, seoImage, storeUrl } = storeConfig;
+const { storeName, description, seoImage, storeUrl } = storeConfig
 
-const DEFAULT_DESCRIPTION = description;
-const DEFAULT_TITLE = storeName;
-const DEFAULT_IMAGE = seoImage;
-const DEFAULT_URL = storeUrl;
+const DEFAULT_DESCRIPTION = description
+const DEFAULT_TITLE = storeName
+const DEFAULT_IMAGE = seoImage
+const DEFAULT_URL = storeUrl
 
 interface SEOProps {
-  description?: string;
-  image?: string;
-  title?: string;
-  url?: string;
-  isProduct?: boolean;
+  description?: string
+  image?: string
+  title?: string
+  url?: string
+  isProduct?: boolean
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -22,12 +22,14 @@ export const SEO: React.FC<SEOProps> = ({
   description,
   image,
   url,
-  isProduct = false,
+  isProduct = false
 }) => {
-  title = title ? `${title} | ${storeName}` : DEFAULT_TITLE;
-  description = description || DEFAULT_DESCRIPTION;
-  image = image || DEFAULT_IMAGE;
-  url = url || DEFAULT_URL;
+  const capitalizedTitle = (title: string) =>
+    title.charAt(0).toUpperCase() + title.slice(1)
+  title = title ? `${capitalizedTitle(title)} | ${storeName}` : DEFAULT_TITLE
+  description = description || DEFAULT_DESCRIPTION
+  image = image || DEFAULT_IMAGE
+  url = url || DEFAULT_URL
 
   return (
     <>
@@ -60,8 +62,8 @@ export const SEO: React.FC<SEOProps> = ({
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-14G8K4XXTK')`}
+  gtag('config', 'G-Z6S3E3Z5E0')`}
       </Script>
     </>
-  );
-};
+  )
+}
