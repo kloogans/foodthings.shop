@@ -22,7 +22,7 @@ select {
 }
 
 button {
-  @apply select-none;
+  @apply select-none outline-primary;
   cursor: pointer;
 }
 
@@ -54,7 +54,13 @@ button {
 }
 
 .snipcart-cart--edit {
-  @apply bg-white;
+  @apply !bg-primary;
+}
+
+.snipcart-item-line__container,
+.snipcart-cart__footer,
+.snipcart-cart__secondary-header {
+  @apply !bg-primary;
 }
 
 .snipcart-form {
@@ -62,8 +68,13 @@ button {
   @apply border-black;
 }
 
+.snipcart__icon--red {
+  @apply fill-black;
+}
+
 .snipcart-cart-summary--edit.snipcart-modal__container {
   box-shadow: -1rem 0 0 0 #000;
+  @apply !bg-primary;
 }
 
 .snipcart-modal,
@@ -71,7 +82,7 @@ button {
 .snipcart-cart__content,
 .snipcart-cart-header,
 .snipcart-featured-payment-methods__title {
-  @apply bg-red-500;
+  @apply !bg-primary;
   text-transform: lowercase;
 }
 .snipcart-modal__close {
@@ -119,7 +130,7 @@ button {
 }
 
 .snipcart__box--badge-highlight {
-  @apply !bg-yellow-400;
+  @apply !bg-secondary;
   @apply !text-black;
   @apply fill-black;
 }
@@ -191,7 +202,7 @@ button {
 
 .snipcart-cart-button--highlight {
   background-image: none;
-  @apply bg-yellow-300 hover:bg-yellow-400 focus:bg-yellow-400 border-solid border-black border-4 transition;
+  @apply bg-secondary hover:bg-rose-700 focus:bg-rose-700 border-solid font-bold text-white border-black border-4 transition;
 }
 
 .snipcart__box--badge-highlight {

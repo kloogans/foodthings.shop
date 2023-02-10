@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import React, { useEffect, useState } from "react"
+import { useRouter } from "next/router"
+import Link from "next/link"
 
 const NavMenuWrapper = ({ children, show, isMobile }) => {
   if (isMobile) {
     return (
       <ul
         style={{ transition: "all 0.2s ease-in-out" }}
-        className={`items-center place-items-center grid grid-cols-2 md:grid-cols-8 text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full border-8 border-black border-b-0 child:bg-black ${
+        className={`items-center place-items-center grid grid-cols-2 md:grid-cols-8 text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full border-0 md:border-8 border-black border-b-0 child:bg-black ${
           show ? "opacity-100 h-[250px] md:h-[60px]" : "opacity-0 min-h-0 h-0"
         }`}
       >
         {children}
       </ul>
-    );
+    )
   }
 
   return (
@@ -23,8 +23,8 @@ const NavMenuWrapper = ({ children, show, isMobile }) => {
     >
       {children}
     </ul>
-  );
-};
+  )
+}
 
 const menuItems = [
   "all",
@@ -34,16 +34,16 @@ const menuItems = [
   "sweatshirts",
   "bags",
   "mugs",
-  "stickers",
-];
+  "stickers"
+]
 
 export const NavMenu = ({ show = true }) => {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <NavMenuWrapper show={show} isMobile={window.innerWidth < 768}>
       {menuItems.map((item) => {
         return (
-          <li className="min-w-[118px] h-full text-center w-full col-span-2 md:col-span-1">
+          <li className="md:min-w-[118px] h-full text-center w-full">
             <Link
               href={`/${item === "all" ? "" : item}`}
               className={`w-full h-full flex items-center justify-center leading-none shadow-md transition text-center text-white ${
@@ -56,21 +56,21 @@ export const NavMenu = ({ show = true }) => {
               {item}
             </Link>
           </li>
-        );
+        )
       })}
     </NavMenuWrapper>
-  );
-};
+  )
+}
 
 const Navigation = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const router = useRouter();
+  const [showMenu, setShowMenu] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     if (window.innerWidth < 768) {
-      setShowMenu(false);
+      setShowMenu(false)
     }
-  }, []);
+  }, [])
   return (
     <div className="w-full border-b-8 border-b-black">
       <nav
@@ -81,13 +81,13 @@ const Navigation = () => {
 
         <div
           style={{ transition: "all 0.2s ease" }}
-          className={`bg-black ${
-            showMenu ? "pt-6" : "pt-2"
-          } w-full z-30 md:hidden`}
+          className={`bg-black w-full z-30 md:hidden`}
         >
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className={`mx-auto w-full max-w-[5rem] flex items-center justify-center gap-1 transition h-2 py-3 text-white text-sm z-20`}
+            className={`mx-auto w-full md:max-w-[5rem] flex items-center justify-center gap-1 transition h-2 py-6 text-white text-sm z-20 ${
+              showMenu ? "bg-secondary" : ""
+            }`}
           >
             {showMenu ? (
               <svg
@@ -124,7 +124,7 @@ const Navigation = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

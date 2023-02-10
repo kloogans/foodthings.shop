@@ -1,18 +1,18 @@
-import Link from "next/link";
-import useSnipcartCount from "../hooks/useSnipcartCount";
-import Image from "next/image";
-import { useState } from "react";
-import dynamic from "next/dynamic";
-import { NavMenu } from "./Navigation";
-import { useRouter } from "next/router";
-const Navigation = dynamic(() => import("./Navigation"), { ssr: false });
+import Link from "next/link"
+import useSnipcartCount from "../hooks/useSnipcartCount"
+import Image from "next/image"
+import { useState } from "react"
+import dynamic from "next/dynamic"
+import { NavMenu } from "./Navigation"
+import { useRouter } from "next/router"
+const Navigation = dynamic(() => import("./Navigation"), { ssr: false })
 
 const Layout = ({ children }) => {
-  const { cart } = useSnipcartCount();
-  const [showContact, setShowContact] = useState(false);
-  const cartHasItems = cart.items.count !== 0;
-  const router = useRouter();
-  const { pathname } = router;
+  const { cart } = useSnipcartCount()
+  const [showContact, setShowContact] = useState(false)
+  const cartHasItems = cart.items.count !== 0
+  const router = useRouter()
+  const { pathname } = router
 
   return (
     <div className="bg-primary min-h-screen relative">
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
           <div className="w-full grid grid-cols-2 md:grid-cols-3 relative">
             <div className="flex items-center max-h-[60px] md:max-h-[80px] self-center justify-start">
               <Link href="/" className="flex items-center text-black">
-                <span className="w-24 h-24 md:w-[6.5rem] md:h-[6.5rem] -translate-y-[1px] flex items-center justify-center relative">
+                <span className="w-16 h-16 md:w-[6.5rem] md:h-[6.5rem] -translate-y-[1px] flex items-center justify-center relative">
                   <Image src="/assets/logo.svg" alt="Logo" fill />
                 </span>
               </Link>
@@ -42,11 +42,13 @@ const Layout = ({ children }) => {
                 <strong>track my order</strong>
               </Link>
               <button
-                className="group snipcart-checkout appearance-none px-2 text-black hover:text-yellow-200 rounded-md cursor-pointer focus:outline-none focus:text-yellow-200 transition relative"
+                className={`group snipcart-checkout appearance-none px-2 text-black hover:text-rose-500 rounded-md cursor-pointer focus:outline-none focus:text-rose-500 transition relative ${
+                  cartHasItems ? "mr-6" : ""
+                }`}
                 aria-label="Cart"
               >
                 {cartHasItems && (
-                  <span className="absolute bg-secondary rounded-full text-black text-xs py-1 px-2  top-0 right-0 -translate-y-3 translate-x-3">
+                  <span className="absolute bg-secondary rounded-full text-white text-xs font-bold border-2 border-black py-[0.2rem] px-2  top-0 right-0 -translate-y-3 translate-x-3">
                     {cart.items.count || 0}
                   </span>
                 )}
@@ -141,7 +143,7 @@ const Layout = ({ children }) => {
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

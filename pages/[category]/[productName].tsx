@@ -1,25 +1,25 @@
-import dynamic from "next/dynamic";
-import { useState } from "react";
-import { GetServerSideProps } from "next";
-import { printful } from "lib/printful-client";
-import { formatVariantName } from "lib/format-variant-name";
-import { PrintfulProductFull } from "types";
-import Image from "next/image";
-import { useProduct } from "hooks/useProduct";
-import { getProductType } from "lib/getProductType";
-import { getProductDescription } from "lib/getProductDescription";
-import { ProductPageLayout } from "components/ProductPageLayout";
-import BreadCrumbs from "components/BreadCrumbs";
-const VariantPicker = dynamic(() => import("../../components/VariantPicker"));
+import dynamic from "next/dynamic"
+import { useState } from "react"
+import { GetServerSideProps } from "next"
+import { printful } from "lib/printful-client"
+import { formatVariantName } from "lib/format-variant-name"
+import { PrintfulProductFull } from "types"
+import Image from "next/image"
+import { useProduct } from "hooks/useProduct"
+import { getProductType } from "lib/getProductType"
+import { getProductDescription } from "lib/getProductDescription"
+import { ProductPageLayout } from "components/ProductPageLayout"
+import BreadCrumbs from "components/BreadCrumbs"
+const VariantPicker = dynamic(() => import("../../components/VariantPicker"))
 
-const SkeletonLoader = dynamic(() => import("../../components/SkeletonLoader"));
+const SkeletonLoader = dynamic(() => import("../../components/SkeletonLoader"))
 
 type ProductPageProps = {
-  product: PrintfulProductFull;
-};
+  product: PrintfulProductFull
+}
 
 const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false)
   const {
     activeVariantExternalId,
     setActiveVariantExternalId,
@@ -28,14 +28,14 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
     formattedPrice,
     selectedImage,
     setSelectedImage,
-    images,
-  } = useProduct(product);
+    images
+  } = useProduct(product)
 
-  const hasMultipleImages = images.length > 1;
-  const description = getProductDescription(product.name);
-  const productType = getProductType(product.name);
+  const hasMultipleImages = images.length > 1
+  const description = getProductDescription(product.name)
+  const productType = getProductType(product.name)
   // @ts-ignore
-  const isSquare = productType !== "sticker" && productType !== "mug";
+  const isSquare = productType !== "sticker" && productType !== "mug"
 
   return (
     <ProductPageLayout
@@ -200,7 +200,7 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
             </p>
 
             <button
-              className="snipcart-add-item w-full md:w-auto transition flex-shrink-0 py-2 px-4 border-4 border-black shadow-sm text-lg lg:text-xl font-medium bg-secondary text-white hover:bg-rose-700 focus:bg-rose-700 focus:outline-none mb-4"
+              className="snipcart-add-item w-full md:w-auto transition flex-shrink-0 py-2 px-4 border-4 border-black shadow-sm text-lg font-bold bg-secondary text-white hover:bg-rose-700 focus:bg-rose-700 focus:outline-none mb-4"
               data-item-id={activeVariantExternalId}
               data-item-price={activeVariant.retail_price}
               data-item-url={`/api/products/${activeVariantExternalId}`}
@@ -214,59 +214,59 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
         </div>
       </div>
     </ProductPageLayout>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const productName = context.params.productName as string;
-  const cleanedUpProductName = productName.split("-").join(" ");
-  const encodedProductName = encodeURIComponent(cleanedUpProductName as string);
+  const productName = context.params.productName as string
+  const cleanedUpProductName = productName.split("-").join(" ")
+  const encodedProductName = encodeURIComponent(cleanedUpProductName as string)
 
   try {
     const { result } = await printful.get(
       `sync/products?search=${encodedProductName}`
-    );
+    )
 
     if (result.length < 1) {
       return {
         redirect: {
           permanent: false,
-          destination: `/404`,
-        },
-      };
+          destination: `/404`
+        }
+      }
     }
 
     const matchingProduct = result.find(
       ({ name }) => name.split(" ").join("-") === productName
-    );
+    )
 
     const matchedProductData = await printful.get(
       `sync/products/${matchingProduct.id}`
-    );
+    )
 
     const product = {
       ...matchedProductData.result.sync_product,
       variants: matchedProductData.result.sync_variants.map(
         ({ name, ...variant }) => ({
           name: formatVariantName(name),
-          ...variant,
+          ...variant
         })
-      ),
-    };
+      )
+    }
 
     return {
       props: {
-        product: product || {},
-      },
-    };
+        product: product || {}
+      }
+    }
   } catch (e) {
     return {
       redirect: {
         permanent: false,
-        destination: `/404`,
-      },
-    };
+        destination: `/404`
+      }
+    }
   }
-};
+}
 
-export default ProductPagePage;
+export default ProductPagePage

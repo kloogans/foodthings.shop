@@ -24,9 +24,16 @@ export const SEO: React.FC<SEOProps> = ({
   url,
   isProduct = false
 }) => {
-  const capitalizedTitle = (title: string) =>
-    title.charAt(0).toUpperCase() + title.slice(1)
-  title = title ? `${capitalizedTitle(title)} | ${storeName}` : DEFAULT_TITLE
+  const formattedTitle = (title: string) => {
+    return title
+      .split("-")
+      .join(" ")
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+  }
+
+  title = title ? `${formattedTitle(title)} | ${storeName}` : DEFAULT_TITLE
   description = description || DEFAULT_DESCRIPTION
   image = image || DEFAULT_IMAGE
   url = url || DEFAULT_URL
