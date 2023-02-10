@@ -7,7 +7,7 @@ const NavMenuWrapper = ({ children, show, isMobile }) => {
     return (
       <ul
         style={{ transition: "all 0.2s ease-in-out" }}
-        className={`items-center place-items-center grid grid-cols-2 md:grid-cols-8 text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full border-0 md:border-8 border-black border-b-0 child:bg-black ${
+        className={`items-center place-items-center grid grid-cols-2 md:grid-cols-8 md:hidden text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full border-0 md:border-8 border-black border-b-0 child:bg-black ${
           show ? "opacity-100 h-[250px] md:h-[60px]" : "opacity-0 min-h-0 h-0"
         }`}
       >
