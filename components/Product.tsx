@@ -1,78 +1,78 @@
-import { useState } from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import { getProductType } from "../lib/getProductType";
+import { useState } from "react"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
+import { getProductType } from "../lib/getProductType"
 
-const SkeletonLoader = dynamic(() => import("./SkeletonLoader"));
-const PrimaryLink = dynamic(() => import("./PrimaryLink"));
+const SkeletonLoader = dynamic(() => import("./SkeletonLoader"))
+const PrimaryLink = dynamic(() => import("./PrimaryLink"))
 
 const getProductBasePrice = (name: string) => {
-  const productType = getProductType(name);
+  const productType = getProductType(name)
 
   if (
     name === "crippling depression hoodie" ||
     name === "crippling anxiety hoodie"
   ) {
-    return 55;
+    return 55
   }
 
   switch (productType) {
     case "sticker sheet":
-      return 8;
+      return 8
     case "sticker":
-      return 5;
+      return 5
     case "tee":
-      return 20;
+      return 24
     case "aop tee":
-      return 35;
+      return 35
     case "crop tee":
-      return 28;
+      return 28
     case "aop crop tee":
-      return 35;
+      return 35
     case "tank":
-      return 20;
+      return 20
     case "aop tank":
-      return 32;
+      return 32
     case "hoodie":
-      return 35;
+      return 35
     case "aop hoodie":
-      return 55;
+      return 55
     case "sweatshirt":
-      return 35;
+      return 35
     case "aop sweatshirt":
-      return 50;
+      return 50
     case "mug":
-      return 20;
+      return 20
     case "iphone case":
-      return 20;
+      return 20
     case "samsung case":
-      return 20;
+      return 20
     case "apron":
-      return 33;
+      return 33
     case "bag":
-      return 35;
+      return 35
     default:
-      return 20;
+      return 24
   }
-};
+}
 
 const Product = (product) => {
-  const { name, is_ignored } = product;
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const { name, is_ignored } = product
+  const [imageLoaded, setImageLoaded] = useState(false)
 
-  if (is_ignored) return null;
+  if (is_ignored) return null
 
-  const productType = getProductType(name);
+  const productType = getProductType(name)
 
-  let productCategory: string;
+  let productCategory: string
   productType !== "leggings"
     ? (productCategory = productType + "s")
-    : (productCategory = productType);
+    : (productCategory = productType)
 
-  const productBasePrice = getProductBasePrice(name);
+  const productBasePrice = getProductBasePrice(name)
 
-  const imageSize = "w-[260px] h-[260px] xl:w-[300px] xl:h-[300px]";
+  const imageSize = "w-[260px] h-[260px] xl:w-[300px] xl:h-[300px]"
 
   return (
     <article className="flex flex-col relative group md:hover:scale-[1.014] md:focus:scale-[1.014] md:active:scale-100 transition !cursor-pointer">
@@ -118,7 +118,7 @@ const Product = (product) => {
         </div>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

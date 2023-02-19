@@ -33,8 +33,8 @@ const menuItems = [
   "hoodies",
   "sweatshirts",
   "bags",
-  "mugs",
-  "stickers"
+  "aprons",
+  "mugs"
 ]
 
 export const NavMenu = ({ show = true }) => {

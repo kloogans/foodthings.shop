@@ -13,4 +13,5 @@ export const ACCEPTED_PATHS = [
   "aop-sweatshirts",
   "bags",
   "stickers",
-];
+  "aprons"
+]
