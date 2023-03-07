@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import React from "react"
 
 const BreadCrumbs: React.FC<{ className?: string }> = ({ className = "" }) => {
-  const router = useRouter();
-  const [subRoute, idRoute] = router.asPath.split("/").slice(1);
+  const router = useRouter()
+  const [subRoute, idRoute] = router.asPath.split("/").slice(1)
 
   return (
     <div
@@ -60,7 +60,7 @@ const BreadCrumbs: React.FC<{ className?: string }> = ({ className = "" }) => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default BreadCrumbs;
+export default BreadCrumbs

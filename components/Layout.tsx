@@ -67,14 +67,6 @@ const Layout = ({ children }) => {
                   <circle cx="31.5" cy="87.5" r="7.5"></circle>
                   <circle cx="76.5" cy="87.5" r="7.5"></circle>
                 </svg>
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6 fill-black group-hover:fill-yellow-200 group-focus:fill-yellow-200"
-                >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
-                </svg> */}
               </button>
             </div>
           </div>
@@ -94,11 +86,11 @@ const Layout = ({ children }) => {
 
             {showContact ? (
               <a
-                href="mailto:support@fuckedup.shop"
-                title="support@fuckedup.shop"
+                href="mailto:support@foodthings.shop"
+                title="support@foodthings.shop"
                 className="text-black font-bold hover:text-secondary transition mb-2 lg:mb-1"
               >
-                support@fuckedup.shop
+                support@foodthings.shop
               </a>
             ) : (
               <button
@@ -138,7 +130,7 @@ const Layout = ({ children }) => {
             </Link>
           </nav>
           <p className="text-black text-sm">
-            &copy; {new Date().getFullYear()} foodthings.shop
+            &copy; {new Date().getFullYear()} cool things llc
           </p>
         </div>
       </footer>

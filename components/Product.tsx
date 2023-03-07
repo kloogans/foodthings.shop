@@ -75,7 +75,7 @@ const Product = (product) => {
   const imageSize = "w-[260px] h-[260px] xl:w-[300px] xl:h-[300px]"
 
   return (
-    <article className="flex flex-col relative group md:hover:scale-[1.014] md:focus:scale-[1.014] md:active:scale-100 transition !cursor-pointer">
+    <article className="flex flex-col relative group !cursor-pointer">
       {/* <div className="absolute hidden md:block top-0 left-0 bg-black w-full h-full shadow-md -translate-x-[1rem] transition translate-y-[1rem] z-0 md:group-hover:-translate-x-0 md:group-hover:-translate-y-0 md:group-focus:-translate-x-0 md:group-focus:-translate-y-0" /> */}
       <div className="z-10 bg-white border-8 border-black shadow-md">
         <Link

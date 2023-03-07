@@ -1,46 +1,43 @@
-import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import { FeaturedProduct } from "types/featuredProduct";
+import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
+import { FeaturedProduct } from "types/featuredProduct"
 const SkeletonLoader = dynamic(() => import("./SkeletonLoader"), {
-  ssr: false,
-});
+  ssr: false
+})
 
 interface FeaturedCategoriesProps {
-  products: FeaturedProduct[];
-  setShowFeaturedProducts: (arg: boolean) => void;
+  products: FeaturedProduct[]
+  setShowFeaturedProducts: (arg: boolean) => void
 }
 
 const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
   products,
-  setShowFeaturedProducts,
+  setShowFeaturedProducts
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const newIndex =
-        activeIndex === products.length - 1 ? 0 : activeIndex + 1;
-      setActiveIndex(newIndex);
-    }, 5000);
+      const newIndex = activeIndex === products.length - 1 ? 0 : activeIndex + 1
+      setActiveIndex(newIndex)
+    }, 5000)
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearTimeout(timer)
+  })
 
   const { name, image, description, productType, buttonText } =
-    products[activeIndex];
+    products[activeIndex]
 
   return (
-    <article
-      className={`h-full flex flex-col relative group md:hover:scale-[1.014] md:focus:scale-[1.014] md:active:scale-100 transition !cursor-pointer`}
-    >
+    <article className={`h-full flex flex-col relative group !cursor-pointer`}>
       {/* <div className="absolute hidden md:block top-0 left-0 bg-black w-full h-full shadow-md -translate-x-[1rem] transition translate-y-[1rem] z-0 md:group-hover:-translate-x-0 md:group-hover:-translate-y-0 md:group-focus:-translate-x-0 md:group-focus:-translate-y-0" /> */}
       <div className="h-full z-10 bg-white border-8 border-black shadow-md">
         <button
           aria-label="Close"
-          className="appearance-none absolute top-0 right-0 mt-3 mr-3 text-gray-500 focus:text-gray-600 hover:text-yellow-400 transition focus:outline-none"
+          className="appearance-none absolute top-0 right-0 mt-3 mr-3 text-gray-500 focus:text-gray-600 hover:text-secondary transition focus:outline-none"
           onClick={() => setShowFeaturedProducts(false)}
         >
           <svg
@@ -97,7 +94,7 @@ const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
         </div>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default FeaturedCategories;
+export default FeaturedCategories

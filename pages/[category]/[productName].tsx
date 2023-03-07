@@ -31,6 +31,8 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
     images
   } = useProduct(product)
 
+  console.log(images)
+
   const hasMultipleImages = images.length > 1
   const description = getProductDescription(product.name)
   const productType = getProductType(product.name)
@@ -47,95 +49,24 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
         {/* <div className="absolute top-0 hidden md:block left-0 bg-black shadow-md w-full h-full -translate-x-[1rem] transition translate-y-[1rem] z-0" /> */}
         <div className="flex flex-col items-center justify-center relative p-0 md:p-4 z-10 bg-white shadow-md border-8 border-black">
           <BreadCrumbs className="mb-1 self-start" />
-          <div
-            className={`w-full flex flex-col md:flex-row ${
-              hasMultipleImages ? "justify-between" : "justify-center"
-            } items-center mb-4`}
-          >
-            <button
-              className={`${
-                hasMultipleImages ? "hidden md:block" : "hidden"
-              } fill-black hover:scale-[1.05] transition  ${
-                selectedImage === images[0] ? "opacity-0" : "opacity-100"
-              }`}
-              onClick={() => setSelectedImage(images[0])}
-            >
-              <svg
-                className="w-6 h-6 rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-            <div
-              className={`h-[20rem] md:h-[45rem] lg:h-[${
-                isSquare ? "800px" : "650px"
-              }] overflow-hidden flex items-center justify-center`}
-            >
-              <div className="h-[20rem] w-[20rem] md:w-[45rem] md:h-[45rem] lg:w-[800px] lg:h-[800px] object-fit-contain relative flex items-center justify-center overflow-hidden">
-                <p
-                  className={`text-sm text-black ${
-                    imageLoaded ? "hidden" : ""
-                  }`}
-                >
-                  <SkeletonLoader type={productType} />
-                </p>
-                <Image
-                  src={selectedImage || ""}
-                  onLoadStart={() => setImageLoaded(false)}
-                  onLoadingComplete={() => setImageLoaded(true)}
-                  alt={product.name}
-                  layout="fill"
-                />
-              </div>
-            </div>
-            <button
-              className={`${
-                hasMultipleImages ? "hidden md:block" : "hidden"
-              } fill-black hover:scale-[1.05] transition ${
-                selectedImage === images[1] ? "opacity-0" : "opacity-100"
-              }`}
-              onClick={() => setSelectedImage(images[1])}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-
-            <div className="flex items-center justify-center md:hidden pt-2">
-              <button
+          <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center w-full">
+            {/* <div
+              className={`w-full flex flex-col md:flex-row ${
+                hasMultipleImages ? "justify-between" : "justify-center"
+              } items-center mb-4`}
+            > */}
+            {/* <button
                 className={`${
-                  hasMultipleImages ? "" : "hidden"
-                } fill-white hover:scale-[1.05] transition md:hidden p-2 bg-black ${
-                  selectedImage === images[0]
-                    ? "opacity-0 hidden"
-                    : "opacity-100 block"
+                  hasMultipleImages ? "hidden md:block" : "hidden"
+                } fill-black hover:scale-[1.05] transition  ${
+                  selectedImage === images[0] ? "opacity-0" : "opacity-100"
                 }`}
                 onClick={() => setSelectedImage(images[0])}
               >
                 <svg
                   className="w-6 h-6 rotate-180"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -146,21 +77,20 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </button>
-              <button
+              </button> */}
+
+            {/* <button
                 className={`${
-                  hasMultipleImages ? "" : "hidden"
-                } fill-white hover:scale-[1.05] transition md:hidden p-2 bg-black ${
-                  selectedImage === images[1]
-                    ? "opacity-0 hidden"
-                    : "opacity-100 block"
+                  hasMultipleImages ? "hidden md:block" : "hidden"
+                } fill-black hover:scale-[1.05] transition ${
+                  selectedImage === images[1] ? "opacity-0" : "opacity-100"
                 }`}
                 onClick={() => setSelectedImage(images[1])}
               >
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -171,45 +101,133 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
+              </button> */}
+
+            {/* <div className="flex items-center justify-center md:hidden pt-2">
+                <button
+                  className={`${
+                    hasMultipleImages ? "" : "hidden"
+                  } fill-white hover:scale-[1.05] transition md:hidden p-2 bg-black ${
+                    selectedImage === images[0]
+                      ? "opacity-0 hidden"
+                      : "opacity-100 block"
+                  }`}
+                  onClick={() => setSelectedImage(images[0])}
+                >
+                  <svg
+                    className="w-6 h-6 rotate-180"
+                    fill="none"
+                    stroke="white"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className={`${
+                    hasMultipleImages ? "" : "hidden"
+                  } fill-white hover:scale-[1.05] transition md:hidden p-2 bg-black ${
+                    selectedImage === images[1]
+                      ? "opacity-0 hidden"
+                      : "opacity-100 block"
+                  }`}
+                  onClick={() => setSelectedImage(images[1])}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="white"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div> */}
+            {/* </div> */}
+
+            <div className={`flex items-center justify-center`}>
+              <div className="h-[20rem] w-[20rem] md:w-[45rem] md:h-[45rem] relative flex flex-col items-center justify-center">
+                <div className="w-full h-full grid place-items-center relative">
+                  <SkeletonLoader show={!imageLoaded} type={productType} />
+                  <Image
+                    src={selectedImage || ""}
+                    onLoadStart={() => setImageLoaded(false)}
+                    onLoadingComplete={() => setImageLoaded(true)}
+                    alt={product.name}
+                    fill
+                  />
+                </div>
+
+                {hasMultipleImages && (
+                  <div className="w-full flex items-center justify-center gap-1 mt-2">
+                    {images.map((image, index) => (
+                      <button
+                        key={image}
+                        className={`w-20 h-20 border-2 ${
+                          selectedImage === image
+                            ? "border-secondary"
+                            : "border-neutral-400"
+                        } relative aspect-square`}
+                        onClick={() => setSelectedImage(image)}
+                      >
+                        <Image src={image || ""} alt={product.name} fill />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="px-2 w-full flex flex-col items-center justify-center">
+              <h1 className="text-black slab text-4xl lg:text-6xl font-bold leading-none mb-2">
+                {product.name}
+              </h1>
+
+              <h2 className="font-bold text-4xl lg:text-5xl text-secondary mb-2 slab">
+                {formattedPrice}
+              </h2>
+
+              <div className="max-w-sm w-full mb-2">
+                <VariantPicker
+                  value={activeVariantExternalId}
+                  onChange={({ target: { value } }) =>
+                    setActiveVariantExternalId(value)
+                  }
+                  className="py-4 !text-lg"
+                  variants={product.variants}
+                  disabled={product.variants.length === 1}
+                />
+              </div>
+
+              <p
+                className={`text-black text-md mb-4 max-w-sm text-left lowercase whitespace-pre-wrap`}
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+
+              <button
+                className="snipcart-add-item w-full max-w-sm transition flex-shrink-0 py-2 px-4 border-4 border-black shadow-sm text-md lg:text-lg font-bold bg-secondary text-white hover:bg-rose-700 focus:bg-rose-700 focus:outline-none mb-4"
+                data-item-id={activeVariantExternalId}
+                data-item-price={activeVariant.retail_price}
+                data-item-url={`/api/products/${activeVariantExternalId}`}
+                data-item-description={activeVariant.name}
+                data-item-image={activeVariantFile.preview_url}
+                data-item-name={product.name}
+              >
+                add to cart
               </button>
             </div>
-          </div>
-
-          <div className="px-2 flex flex-col items-center justify-center">
-            <h1 className="text-black slab text-3xl lg:text-5xl font-bold mb-3">
-              {product.name}
-            </h1>
-
-            <div className="max-w-sm w-full mb-2">
-              <VariantPicker
-                value={activeVariantExternalId}
-                onChange={({ target: { value } }) =>
-                  setActiveVariantExternalId(value)
-                }
-                className="py-4 !text-lg"
-                variants={product.variants}
-                disabled={product.variants.length === 1}
-              />
-            </div>
-
-            <p className={`text-black text-md mb-2 max-w-sm text-left`}>
-              {description}
-            </p>
-            <p className="font-bold text-4xl lg:text-6xl text-black mb-2 slab">
-              {formattedPrice}
-            </p>
-
-            <button
-              className="snipcart-add-item w-full md:w-auto transition flex-shrink-0 py-2 px-4 border-4 border-black shadow-sm text-lg font-bold bg-secondary text-white hover:bg-rose-700 focus:bg-rose-700 focus:outline-none mb-4"
-              data-item-id={activeVariantExternalId}
-              data-item-price={activeVariant.retail_price}
-              data-item-url={`/api/products/${activeVariantExternalId}`}
-              data-item-description={activeVariant.name}
-              data-item-image={activeVariantFile.preview_url}
-              data-item-name={product.name}
-            >
-              add to cart
-            </button>
           </div>
         </div>
       </div>

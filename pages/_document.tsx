@@ -26,7 +26,7 @@ class MyDocument extends Document {
             type="font/ttf"
           />
           <meta property="og:type" content="website" />
-          <meta property="og:site_name" content={`https://fuckedup.shop`} />
+          <meta property="og:site_name" content={`https://foodthings.shop`} />
         </Head>
         <body className="antialiased">
           <Main />

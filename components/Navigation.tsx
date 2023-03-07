@@ -50,7 +50,13 @@ export const NavMenu = ({ show = true }) => {
                 router.asPath === `/${item}`
                   ? "bg-secondary font-bold"
                   : " hover:bg-rose-600 focus:bg-rose-600"
-              }`}
+              }
+              ${
+                router.asPath === `/` && item === "all"
+                  ? "bg-secondary font-bold"
+                  : " hover:bg-rose-600 focus:bg-rose-600"
+              }
+              `}
               title={item}
             >
               {item}

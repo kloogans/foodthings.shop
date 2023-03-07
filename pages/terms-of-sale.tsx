@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Script from "next/script";
-import BreadCrumbs from "components/BreadCrumbs";
+import Head from "next/head"
+import Script from "next/script"
+import BreadCrumbs from "components/BreadCrumbs"
 
-const SUPPORT_EMAIL = "support@foodthings.shop";
+const SUPPORT_EMAIL = "support@foodthings.shop"
 const TermsPage = () => {
   return (
     <div className="flex flex-col items-center justify-start relative p-0 md:p-4 z-10 bg-white shadow-md border-8 border-black md:min-h-[40rem]">
@@ -14,7 +14,7 @@ const TermsPage = () => {
         />
         {/* Facebook */}
         <meta property="og:title" content={`fucked up shop`} />
-        <meta property="og:url" content={`https://fuckedup.shop`} />
+        <meta property="og:url" content={`https://foodthings.shop`} />
         <meta
           property="og:image"
           content={`https://littlebuilds.s3.us-east-1.amazonaws.com/fedup-seo-image.jpg`}
@@ -25,7 +25,7 @@ const TermsPage = () => {
         />
         {/* Twitter */}
         <meta name="twitter:creator" content="@fuckedupfoods" />
-        <meta name="twitter:url" content={`https://fuckedup.shop`} />
+        <meta name="twitter:url" content={`https://foodthings.shop`} />
         <meta name="twitter:title" content={`fucked up shop`} />
         <meta
           name="twitter:description"
@@ -82,7 +82,7 @@ const TermsPage = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TermsPage;
+export default TermsPage
