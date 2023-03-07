@@ -30,8 +30,8 @@ const BreadCrumbs: React.FC<{ className?: string }> = ({ className = "" }) => {
           </svg>
           <Link
             href={`/${subRoute}`}
-            className={`hover:text-rose-700 ${
-              !idRoute ? "text-secondary font-bold" : ""
+            className={`hover:text-secondary ${
+              !idRoute ? "text-rose-500 font-bold" : ""
             }`}
             title={subRoute as string}
           >
@@ -54,7 +54,7 @@ const BreadCrumbs: React.FC<{ className?: string }> = ({ className = "" }) => {
               clipRule="evenodd"
             />
           </svg>
-          <span className="text-secondary font-bold">
+          <span className="text-rose-600 font-bold">
             <strong>{(idRoute as string).split("-").join(" ")}</strong>
           </span>
         </>
