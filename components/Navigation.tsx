@@ -29,7 +29,7 @@ const NavMenuWrapper = ({ children, show, isMobile }) => {
 const menuItems = [
   "all",
   "tees",
-  "tanks",
+  // "tanks",
   "hoodies",
   "sweatshirts",
   "bags",

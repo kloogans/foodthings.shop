@@ -5,17 +5,23 @@ import { useState } from "react"
 import dynamic from "next/dynamic"
 import { NavMenu } from "./Navigation"
 import { useRouter } from "next/router"
+import { AnnouncementBanner } from "./AnnouncementBanner"
 const Navigation = dynamic(() => import("./Navigation"), { ssr: false })
 
 const Layout = ({ children }) => {
   const { cart } = useSnipcartCount()
   const [showContact, setShowContact] = useState(false)
+  const [hideAnnouncement, setHideAnnouncement] = useState(false)
   const cartHasItems = cart.items.count !== 0
   const router = useRouter()
   const { pathname } = router
 
   return (
     <div className="bg-primary min-h-screen relative">
+      <AnnouncementBanner
+        hide={hideAnnouncement}
+        handleHideBanner={() => setHideAnnouncement(true)}
+      />
       <header
         style={{ transition: "all .2s ease-in-out" }}
         className="md:pb-2 md:py-4 md:pt-2 z-10"
@@ -130,7 +136,7 @@ const Layout = ({ children }) => {
             </Link>
           </nav>
           <p className="text-black text-sm">
-            &copy; {new Date().getFullYear()} cool things llc
+            &copy; {new Date().getFullYear()} web things llc
           </p>
         </div>
       </footer>

@@ -33,14 +33,6 @@ export const storeConfig = {
       buttonText: "shop sweatshirts"
     },
     {
-      name: "tanks",
-      description:
-        "the hungriest and most comfortable tanks on this website. guaranteed.",
-      productType: "tank",
-      image: "https://littlebuilds.s3.us-east-1.amazonaws.com/fuck-tank.webp",
-      buttonText: "shop tanks"
-    },
-    {
       name: "mugs",
       description:
         "bring one to the office and your boss will probably give you a raise. they're that good.",
