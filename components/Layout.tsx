@@ -24,11 +24,11 @@ const Layout = ({ children }) => {
       />
       <header
         style={{ transition: "all .2s ease-in-out" }}
-        className="md:pb-2 md:py-4 md:pt-2 z-10"
+        className="relative md:pb-2 md:py-4 md:pt-2 z-[100] bg-primary"
       >
         <div className="max-w-[1540px] mx-auto px-2 md:px-0">
           <div className="w-full grid grid-cols-2 md:grid-cols-3 relative">
-            <div className="flex items-center max-h-[60px] md:max-h-[80px] self-center justify-start">
+            <div className="ml-2 xl:ml-0 flex items-center max-h-[60px] md:max-h-[80px] self-center justify-start">
               <Link href="/" className="flex items-center text-black">
                 <span className="w-16 h-16 md:w-[6.5rem] md:h-[6.5rem] -translate-y-[1px] flex items-center justify-center relative">
                   <Image src="/assets/logo.svg" alt="Logo" fill />

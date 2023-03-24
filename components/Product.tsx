@@ -7,6 +7,31 @@ import { getProductType } from "../lib/getProductType"
 const SkeletonLoader = dynamic(() => import("./SkeletonLoader"))
 const PrimaryLink = dynamic(() => import("./PrimaryLink"))
 
+const BASE_PRICES = {
+  "sticker sheet": 8,
+  sticker: 5,
+  tee: 24,
+  "aop tee": 35,
+  "crop tee": 28,
+  "aop crop tee": 35,
+  tank: 20,
+  "aop tank": 32,
+  hoodie: 35,
+  "aop hoodie": 55,
+  sweatshirt: 35,
+  "aop sweatshirt": 50,
+  mug: 20,
+  "iphone case": 20,
+  "samsung case": 20,
+  apron: 33,
+  headband: 15,
+  backpack: 50,
+  drawstring: 25,
+  tote: 35,
+  "laptop case": 35,
+  "crop sleeveless tee": 28
+}
+
 const getProductBasePrice = (name: string) => {
   const productType = getProductType(name)
 
@@ -17,44 +42,11 @@ const getProductBasePrice = (name: string) => {
     return 55
   }
 
-  switch (productType) {
-    case "sticker sheet":
-      return 8
-    case "sticker":
-      return 5
-    case "tee":
-      return 24
-    case "aop tee":
-      return 35
-    case "crop tee":
-      return 28
-    case "aop crop tee":
-      return 35
-    case "tank":
-      return 20
-    case "aop tank":
-      return 32
-    case "hoodie":
-      return 35
-    case "aop hoodie":
-      return 55
-    case "sweatshirt":
-      return 35
-    case "aop sweatshirt":
-      return 50
-    case "mug":
-      return 20
-    case "iphone case":
-      return 20
-    case "samsung case":
-      return 20
-    case "apron":
-      return 33
-    case "bag":
-      return 35
-    default:
-      return 24
+  if (BASE_PRICES[productType]) {
+    return BASE_PRICES[productType]
   }
+
+  return 24
 }
 
 const Product = (product) => {
