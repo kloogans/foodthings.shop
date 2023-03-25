@@ -51,16 +51,19 @@ button {
 .snipcart {
   @apply text-black font-normal;
   font-family: "Inter", sans-serif !important;
+  z-index: 200;
 }
 
 .snipcart-cart--edit {
   @apply !bg-primary;
+  z-index: 200;
 }
 
 .snipcart-item-line__container,
 .snipcart-cart__footer,
 .snipcart-cart__secondary-header {
   @apply !bg-primary;
+  z-index: 200;
 }
 
 .snipcart-form {
@@ -74,7 +77,6 @@ button {
 
 .snipcart-cart-summary--edit.snipcart-modal__container {
   box-shadow: -1rem 0 0 0 #000;
-  @apply !bg-primary;
 }
 
 .snipcart-modal,
@@ -84,9 +86,45 @@ button {
 .snipcart-featured-payment-methods__title {
   @apply !bg-primary;
   text-transform: lowercase;
+  z-index: 200;
 }
+
+.snipcart-item-line__container {
+  background: white !important;
+}
+
+.snipcart-item-quantity__quantity {
+  border: none !important;
+}
+
+.snipcart-modal__container {
+  z-index: 200;
+}
+
+.snipcart-cart__content {
+  padding: 1rem;
+}
+
+.snipcart-item-line {
+  background: white !important;
+  margin-bottom: 0.5rem;
+}
+
+.snipcart-cart-summary-fees__notice {
+  color: black !important;
+  opacity: 0.65;
+}
+
+.snipcart-item-line__image {
+  margin-right: 1rem;
+}
+
 .snipcart-modal__close {
   @apply text-black;
+}
+
+.snipcart-empty-cart__title {
+  color: black !important;
 }
 
 .snipcart-modal__close-title {
@@ -103,6 +141,10 @@ button {
 
 .snipcart__icon--blue-light path {
   fill: black !important;
+}
+
+.snipcart__button--icon {
+  border: none !important;
 }
 
 .snipcart-modal__header-summary-title {

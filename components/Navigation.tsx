@@ -60,13 +60,13 @@ const SubMenu = ({ items }: { items: string[] }) => {
     <>
       <li
         onClick={() => setShow(!show)}
-        className="peer md:min-w-[118px] lg:h-full py-6 lg:py-4 grid place-items-center text-center w-1/2 md:w-full group text-white hover:bg-rose-600 focus:bg-rose-600 select-none"
+        className="peer md:min-w-[118px] lg:h-full py-6 lg:py-4 grid place-items-center text-center w-1/2 md:w-full group text-white lg:hover:bg-rose-600 lg:focus:bg-rose-600 select-none"
       >
         {items[0]}
         <ul
           className={`absolute overflow-x-hidden top-0 lg:top-full -translate-y-[8px] left-0 w-full h-full lg:min-h-[20rem] bg-black -translate-x-full lg:translate-x-0 ${
             show ? "translate-x-0" : ""
-          } grid lg:hidden hover:grid lg:group-hover:grid grid-cols-2 lg:grid-cols-3 transition z-50 border-8 border-secondary border-t-4`}
+          } grid lg:hidden hover:grid lg:group-hover:grid grid-cols-2 lg:grid-cols-3 transition z-50`}
         >
           {/* back button */}
           <button
