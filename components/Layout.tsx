@@ -18,34 +18,43 @@ const Layout = ({ children }) => {
 
   return (
     <div className="bg-primary min-h-screen relative">
-      <AnnouncementBanner
-        hide={hideAnnouncement}
-        handleHideBanner={() => setHideAnnouncement(true)}
-      />
       <header
         style={{ transition: "all .2s ease-in-out" }}
-        className="relative md:pb-2 md:py-4 md:pt-2 z-[100] bg-primary"
+        className={`fixed top-0 left-0 w-full md:pb-2 z-[100] bg-primary ${
+          hideAnnouncement
+            ? "border-t-8 border-b-8 border-black"
+            : "border-b-8 border-black"
+        }`}
       >
-        <div className="max-w-[1540px] mx-auto px-2 md:px-0">
-          <div className="w-full grid grid-cols-2 md:grid-cols-3 relative">
-            <div className="ml-2 xl:ml-0 flex items-center max-h-[60px] md:max-h-[80px] self-center justify-start">
+        <AnnouncementBanner
+          hide={hideAnnouncement}
+          handleHideBanner={() => setHideAnnouncement(true)}
+        />
+        <div className="relative max-w-[1540px] w-full mx-auto px-2 md:px-0 lg:py-2 bg-primary z-50">
+          <div className="w-screen lg:w-full flex items-center space-between relative">
+            {/* logo */}
+            <div className="ml-2 xl:ml-0 flex items-center max-h-[60px] md:max-h-[80px] self-center justify-start flex-auto lg:flex-0">
               <Link href="/" className="flex items-center text-black">
                 <span className="w-16 h-16 md:w-[6.5rem] md:h-[6.5rem] -translate-y-[1px] flex items-center justify-center relative">
                   <Image src="/assets/logo.svg" alt="Logo" fill />
                 </span>
               </Link>
             </div>
-
-            <div className="flex items-center justify-end md:absolute md:right-0 self-center">
+            {/* desktop nav */}
+            <div className="w-full hidden lg:block px-16">
+              <Navigation />
+            </div>
+            {/* controls */}
+            <div className="flex items-center justify-end mr-4 lg:mr-0">
               <Link
                 href="/track-order"
-                className={`hover:text-secondary text-sm mr-2 ${
+                className={`hover:text-secondary text-sm mr-2 lg:min-w-[75px] ${
                   pathname.includes("track-order")
                     ? "text-secondary font-bold"
                     : "text-black"
                 }`}
               >
-                <strong>track my order</strong>
+                <strong>track order</strong>
               </Link>
               <button
                 className={`group snipcart-checkout appearance-none px-2 text-black hover:text-rose-500 rounded-md cursor-pointer focus:outline-none focus:text-rose-500 transition relative ${
@@ -77,11 +86,15 @@ const Layout = ({ children }) => {
             </div>
           </div>
         </div>
+        <div className="w-full lg:hidden">
+          <Navigation />
+        </div>
       </header>
-      <Navigation />
       <main
         style={{ minHeight: "calc(100vh - 180px)" }}
-        className="py-6 pb-10 flex-auto relative px-2 bg-black background-food"
+        className={`py-6 pb-10 flex-auto relative px-2 bg-black background-food ${
+          hideAnnouncement ? "mt-[6.5rem] lg:mt-[7rem]" : "mt-52 lg:mt-44"
+        }`}
       >
         <div className="w-full max-w-[1540px] mx-auto">{children}</div>
       </main>

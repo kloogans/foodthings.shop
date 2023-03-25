@@ -4,25 +4,39 @@ import Link from "next/link"
 
 const MENU_ITEMS = [
   "all",
-  ["clothing", "tees", "crop tees", "sweatshirts", "hoodies"],
+  [
+    "clothing",
+    "tees",
+    "crop tees",
+    "sweatshirts",
+    "hoodies",
+    "sleeveless crop tees"
+  ],
   // "tanks",
   ["bags", "totes", "fanny packs", "backpacks", "drawstrings"],
-  "mugs",
-  ["accessories", "aprons", "headbands", "stickers"]
+  ["kitchen", "mugs", "tumblers", "aprons"],
+  ["accessories", "headbands", "stickers"]
 ]
 
-const NavMenuWrapper = ({ children, show, isMobile }) => {
+const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
   if (isMobile) {
     return (
       <ul
         style={{ transition: "all 0.2s ease-in-out" }}
-        className={`relative items-center place-items-center grid grid-cols-2 md:grid-cols-${
-          MENU_ITEMS.length
-        } md:hidden text-black text-sm  md:text-lg flex-wrap overflow-y-hidden z-20 w-full border-0 md:border-8 border-black border-b-0 child:bg-black ${
-          show ? "translate-y-0 h-[40rem]" : "-translate-y-full h-0"
-        }`}
+        className={`relative items-center justify-center h-full flex md:hidden text-black text-sm md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-black`}
       >
         {children}
+        <li
+          onClick={() => setShow(false)}
+          className="peer w-full max-w-[10rem]"
+        >
+          <button
+            onClick={() => setShow(false)}
+            className="w-full bg-secondary py-4 text-white select-none font-bold"
+          >
+            close
+          </button>
+        </li>
       </ul>
     )
   }
@@ -30,7 +44,7 @@ const NavMenuWrapper = ({ children, show, isMobile }) => {
   return (
     <ul
       style={{ transition: "all 0.2s ease-in-out" }}
-      className={`items-center place-items-center grid grid-cols-2 md:grid-cols-${MENU_ITEMS.length} text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full border-8 border-black border-b-0 child:bg-black opacity-100 h-[120px] md:h-[60px]`}
+      className={`items-center place-items-center grid grid-cols-2 md:grid-cols-5 text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full lg:flex-auto lg:border-8 lg:border-secondary child:bg-black opacity-100`}
     >
       {children}
     </ul>
@@ -43,66 +57,68 @@ const SubMenu = ({ items }: { items: string[] }) => {
   const numItems = items.length - 1
   const isOdd = (numItems + 1) % 2 !== 0
   return (
-    <li
-      onClick={() => setShow(!show)}
-      className="md:min-w-[118px] h-full grid place-items-center text-center w-full group text-white hover:bg-rose-600 focus:bg-rose-600 select-none"
-    >
-      {items[0]}
-      <ul
-        className={`absolute overflow-hidden top-0 lg:top-full left-0 w-full h-full lg:min-h-[80px] bg-black border-8 border-black border-t-0 py-2 -translate-x-full lg:translate-x-0 ${
-          show ? "translate-x-0" : ""
-        } grid lg:hidden lg:group-hover:grid grid-cols-2 lg:grid-cols-3 transition z-50`}
+    <>
+      <li
+        onClick={() => setShow(!show)}
+        className="peer md:min-w-[118px] lg:h-full py-6 lg:py-4 grid place-items-center text-center w-1/2 md:w-full group text-white hover:bg-rose-600 focus:bg-rose-600 select-none"
       >
-        {/* back button */}
-        <button
-          onClick={() => setShow(false)}
-          className={`flex items-center justify-center gap-1 py-2 text-white transition lg:hidden`}
+        {items[0]}
+        <ul
+          className={`absolute overflow-x-hidden top-0 lg:top-full -translate-y-[8px] left-0 w-full h-full lg:min-h-[20rem] bg-black -translate-x-full lg:translate-x-0 ${
+            show ? "translate-x-0" : ""
+          } grid lg:hidden hover:grid lg:group-hover:grid grid-cols-2 lg:grid-cols-3 transition z-50 border-8 border-secondary border-t-4`}
         >
-          {/* left arrow svg icon */}
-          <svg
-            className="w-3 h-3 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          {/* back button */}
+          <button
+            onClick={() => setShow(false)}
+            className={`flex items-center justify-center gap-1 py-2 text-white transition lg:hidden`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
-          back
-        </button>
-        {items
-          .filter((i) => i !== items[0])
-          .map((subItem) => {
-            const formattedName = subItem.split(" ").join("-").slice(0, -1)
-            return (
-              <li
-                className={`md:min-w-[118px] h-full text-center w-full group text-white ${
-                  isOdd ? "last:col-span-2 lg:last:col-span-1" : ""
-                }`}
-              >
-                <Link
-                  href={`/${items[0]}/${formattedName}`}
-                  onClick={() => setShow(false)}
-                  className={`w-full h-full flex items-center justify-center leading-none shadow-md transition text-center select-none text-white py-6 ${
-                    router.asPath === `/${subItem}`
-                      ? "bg-secondary font-bold"
-                      : " hover:bg-rose-600 focus:bg-rose-600"
-                  }
-                      `}
-                  title={subItem}
+            {/* left arrow svg icon */}
+            <svg
+              className="w-3 h-3 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            back
+          </button>
+          {items
+            .filter((i) => i !== items[0])
+            .map((subItem) => {
+              const formattedName = subItem.split(" ").join("-")
+              return (
+                <li
+                  className={`md:min-w-[118px] text-center w-full group text-white ${
+                    isOdd ? "last:col-span-2 lg:last:col-span-1" : ""
+                  }`}
                 >
-                  {subItem}
-                </Link>
-              </li>
-            )
-          })}
-      </ul>
-    </li>
+                  <Link
+                    href={`/${formattedName}`}
+                    onClick={() => setShow(false)}
+                    className={`w-full h-full flex items-center justify-center leading-none shadow-md transition text-center select-none text-white ${
+                      router.asPath === `/${subItem}`
+                        ? "lg:bg-secondary font-bold"
+                        : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
+                    }
+                      `}
+                    title={subItem}
+                  >
+                    {subItem}
+                  </Link>
+                </li>
+              )
+            })}
+        </ul>
+      </li>
+    </>
   )
 }
 
@@ -120,28 +136,32 @@ export const NavMenu = ({ show = true, setShowMenu }) => {
   const oddAmountOfMenuItems = MENU_ITEMS.length % 2 !== 0
 
   return (
-    <NavMenuWrapper show={show} isMobile={window.innerWidth < 768}>
+    <NavMenuWrapper
+      show={show}
+      isMobile={window.innerWidth < 768}
+      setShow={setShowMenu}
+    >
       {MENU_ITEMS.map((item) => {
         if (typeof item === "object") {
           return <SubMenu items={item} />
         }
         return (
           <li
-            className={`md:min-w-[118px] h-full text-center w-full ${
+            className={`md:min-w-[118px] text-center w-full lg:h-full ${
               oddAmountOfMenuItems ? "last:col-span-2 lg:last:col-span-1" : ""
             }`}
           >
             <Link
-              href={`/${item === "all" ? "" : item}`}
-              className={`w-full h-full flex items-center justify-center leading-none shadow-md transition text-center text-white ${
+              href={`/${item === "all" ? "" : item + "s"}`}
+              className={`w-full h-full py-6 lg:py-4 flex items-center justify-center leading-none shadow-md transition text-center text-white ${
                 router.asPath === `/${item}`
-                  ? "bg-neutral-800 font-bold"
-                  : " hover:bg-rose-600 focus:bg-rose-600"
+                  ? "lg:bg-neutral-900 font-bold"
+                  : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
               }
               ${
                 router.asPath === `/` && item === "all"
-                  ? "bg-secondary font-bold"
-                  : " hover:bg-rose-600 focus:bg-rose-600"
+                  ? "lg:bg-neutral-900 font-bold"
+                  : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
               }
               `}
               title={item}
@@ -165,12 +185,14 @@ const Navigation = () => {
     }
   }, [])
   return (
-    <div className="w-full border-b-8 border-b-black z-50 relative">
+    <>
       <nav
         style={{ transition: "all 0.2s ease" }}
-        className={`w-full flex flex-col items-center justify-center z-40 max-w-[1540px] mx-auto relative `}
+        className={`relative w-full flex flex-col items-center justify-center max-w-[1540px] mx-auto`}
       >
-        <NavMenu show={showMenu} setShowMenu={setShowMenu} />
+        <div className="w-full hidden lg:block">
+          <NavMenu show={showMenu} setShowMenu={setShowMenu} />
+        </div>
 
         <div
           style={{ transition: "all 0.2s ease" }}
@@ -212,11 +234,20 @@ const Navigation = () => {
               </svg>
             )}
 
-            <strong>{showMenu ? "close" : "menu"}</strong>
+            <strong>menu</strong>
           </button>
         </div>
       </nav>
-    </div>
+      <div
+        className={`fixed top-0 left-0 w-full h-screen bg-black lg:hidden z-[200] transition duration-100 ease-in-out origin-top ${
+          showMenu
+            ? "scale-y-100 child:opacity-100"
+            : "scale-y-0 child:opacity-0"
+        }`}
+      >
+        <NavMenu show={showMenu} setShowMenu={setShowMenu} />
+      </div>
+    </>
   )
 }
 

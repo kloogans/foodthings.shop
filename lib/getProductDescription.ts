@@ -52,4 +52,24 @@ It also has a top zipper with two sliders, a small inner pocket, and an inside l
     return `Our apron is a functional and stylish kitchen accessory that can be a great addition to any outfit showcasing your inner foodie. 
     
 Made of 100% organic cotton, it features adjustable straps and a large front pocket with two compartments.`
+
+  if (name.includes("backpack")) {
+    return `A Food Things medium size backpack has plenty of room with a big inner pocket, separate section for a 15'' laptop, front pocket, and a hidden pocket at the back for valuables. 
+    
+    The bag is made out of a water-resistant material, which means your belongings will stay crisp and dry no matter the weather!`
+  }
+
+  if (name.includes("drawstring bag"))
+    return `Our drawstring bag is a great way to showcase your inner foodie with its comfortable and relaxed fit, ideal for sunny days or as an extra layer. Its 100% spun polyester fabric is soft and lightweight, with twin cotton handles.`
+
+  if (name.includes("laptop case"))
+    return `Our laptop case is a durable and high-quality option for showcasing your inner foodie. To prevent any scratches, it contains a padded zipper binding and its interior is lined with faux fur.`
+
+  if (name.includes("headband"))
+    return `Rising and falling in popularity since the 1920s, the headband has evolved into a full-on fashion statement and is once again back in style, and we've put food on them. 
+    
+    With its 82% polyester, 18% spandex fabric composition, it's a comfortable and durable choice for workouts, or just hanging out and looking cool and cultured in front of other people.`
+
+  if (name.includes("crop tee") || name.includes("sleeveless crop"))
+    return `Our crop top is a comfortable and versatile option suitable for anyone, with a soft and stretchy feel. With its 82% polyester and 18% spandex fabric composition, it's a comfortable and durable choice to wear out.`
 }

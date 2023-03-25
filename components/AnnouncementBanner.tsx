@@ -118,9 +118,12 @@ export const AnnouncementBanner = ({
   if (hide) return null
   return (
     <div className="relative w-full flex items-center justify-center px-2 bg-black z-[100]">
-      <button className="absolute top-0 right-0 p-2" onClick={handleHideBanner}>
+      <button
+        className="absolute top-0 right-0 px-4 h-full flex items-center group"
+        onClick={handleHideBanner}
+      >
         <svg
-          className="w-6 h-6 text-white"
+          className="w-6 h-6 text-white group-hover:text-secondary transition-colors duration-200 ease-in-out"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

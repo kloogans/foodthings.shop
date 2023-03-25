@@ -13,5 +13,16 @@ export const ACCEPTED_PATHS = [
   "aop-sweatshirts",
   "bags",
   "stickers",
-  "aprons"
+  "aprons",
+  "fanny-packs",
+  "drawstrings",
+  "laptop-cases",
+  "backpacks",
+  "headbands",
+  "iphone-cases",
+  "samsung-cases",
+  "tumblers",
+  "sleeveless-crop-tees",
+  "crop-tees",
+  "totes"
 ]

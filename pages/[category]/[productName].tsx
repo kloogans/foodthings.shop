@@ -212,7 +212,7 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
               </div>
 
               <p
-                className={`text-black text-md mb-4 max-w-sm text-left lowercase whitespace-pre-wrap`}
+                className={`text-black text-sm lg:text-lg mb-4 max-w-sm text-left lowercase whitespace-pre-wrap`}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
 
@@ -278,6 +278,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       }
     }
   } catch (e) {
+    console.log(e.message)
     return {
       redirect: {
         permanent: false,

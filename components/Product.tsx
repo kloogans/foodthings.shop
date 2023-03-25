@@ -24,12 +24,13 @@ const BASE_PRICES = {
   "iphone case": 20,
   "samsung case": 20,
   apron: 33,
-  headband: 15,
+  headband: 17,
   backpack: 50,
   drawstring: 25,
-  tote: 35,
-  "laptop case": 35,
-  "crop sleeveless tee": 28
+  tote: 30,
+  "laptop case": 30,
+  "crop sleeveless tee": 28,
+  tumbler: "28"
 }
 
 const getProductBasePrice = (name: string) => {
