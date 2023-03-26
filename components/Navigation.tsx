@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 
 const MENU_ITEMS = [
-  "all",
+  "home",
   [
     "clothing",
     "tees",
