@@ -1,4 +1,6 @@
 export const getProductType = (name: string) => {
+  if (name.includes("aop kids tee")) return "aop kids tee"
+  if (name.includes("kids tee")) return "kids tee"
   if (name.includes("aop hoodie")) return "aop hoodie"
   if (name.includes("aop crop tee")) return "aop crop tee"
   if (name.includes("aop tee")) return "aop tee"
@@ -22,6 +24,11 @@ export const getProductType = (name: string) => {
   if (name.includes("laptop case")) return "laptop case"
   if (name.includes("backpack")) return "backpack"
   if (name.includes("headband")) return "headband"
+  if (name.includes("fanny pack")) return "fanny pack"
+  if (name.includes("tumbler")) return "tumbler"
+  if (name.includes("scrunchie")) return "scrunchie"
+  if (name.includes("bandana")) return "bandana"
+  if (name.includes("gym bag")) return "gym bag"
 
   return "tee"
 }

@@ -4,11 +4,19 @@ import Link from "next/link"
 
 const MENU_ITEMS = [
   "all",
-  ["clothing", "tees", "crop tees", "sweatshirts", "hoodies"],
+  [
+    "clothing",
+    "tees",
+    "tanks",
+    "crop tees",
+    "sweatshirts",
+    "hoodies",
+    "kids tees"
+  ],
   // "tanks",
-  ["bags", "totes", "fanny packs", "backpacks", "drawstrings"],
+  ["bags", "totes", "fanny packs", "backpacks", "drawstrings", "gym bags"],
   ["kitchen", "mugs", "tumblers", "aprons"],
-  ["accessories", "headbands", "stickers"]
+  ["accessories", "headbands", "scrunchies", "bandanas", "stickers"]
 ]
 
 const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
@@ -57,7 +65,7 @@ const SubMenu = ({ items }: { items: string[] }) => {
       >
         {items[0]}
         <ul
-          className={`absolute overflow-x-hidden top-0 lg:top-full -translate-y-[8px] left-0 w-full h-full lg:min-h-[20rem] bg-black -translate-x-full lg:translate-x-0 ${
+          className={`absolute overflow-x-hidden top-0 lg:top-full -translate-y-[8px] left-0 w-full h-full lg:min-h-[20rem] bg-black -translate-x-full lg:translate-x-0 lg:border-8 lg:border-secondary lg:border-t-4 ${
             show ? "translate-x-0" : ""
           } grid lg:hidden hover:grid lg:group-hover:grid grid-cols-2 lg:grid-cols-3 transition z-50`}
         >

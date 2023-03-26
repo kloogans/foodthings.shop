@@ -11,10 +11,12 @@ const BASE_PRICES = {
   "sticker sheet": 8,
   sticker: 5,
   tee: 24,
+  "aop kids tee": 28,
+  "kids tee": 21,
   "aop tee": 35,
   "crop tee": 28,
   "aop crop tee": 35,
-  tank: 20,
+  tank: 22,
   "aop tank": 32,
   hoodie: 35,
   "aop hoodie": 55,
@@ -31,7 +33,10 @@ const BASE_PRICES = {
   "fanny pack": 35,
   "laptop case": 30,
   "crop sleeveless tee": 28,
-  tumbler: "28"
+  tumbler: "28",
+  scrunchie: 15,
+  bandana: 17,
+  "gym bag": 60
 }
 
 const getProductBasePrice = (name: string) => {
