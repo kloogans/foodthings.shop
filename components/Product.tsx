@@ -28,6 +28,7 @@ const BASE_PRICES = {
   backpack: 50,
   drawstring: 25,
   tote: 30,
+  "fanny pack": 35,
   "laptop case": 30,
   "crop sleeveless tee": 28,
   tumbler: "28"

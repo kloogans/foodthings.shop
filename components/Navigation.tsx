@@ -4,14 +4,7 @@ import Link from "next/link"
 
 const MENU_ITEMS = [
   "all",
-  [
-    "clothing",
-    "tees",
-    "crop tees",
-    "sweatshirts",
-    "hoodies",
-    "sleeveless crop tees"
-  ],
+  ["clothing", "tees", "crop tees", "sweatshirts", "hoodies"],
   // "tanks",
   ["bags", "totes", "fanny packs", "backpacks", "drawstrings"],
   ["kitchen", "mugs", "tumblers", "aprons"],
