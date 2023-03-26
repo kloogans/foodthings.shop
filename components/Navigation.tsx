@@ -153,14 +153,14 @@ export const NavMenu = ({ show = true, setShowMenu }) => {
             }`}
           >
             <Link
-              href={`/${item === "all" ? "" : item + "s"}`}
+              href={`/${item === "home" ? "" : item + "s"}`}
               className={`w-full h-full py-6 lg:py-4 flex items-center justify-center leading-none shadow-md transition text-center text-white ${
                 router.asPath === `/${item}`
                   ? "lg:bg-neutral-900 font-bold"
                   : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
               }
               ${
-                router.asPath === `/` && item === "all"
+                router.asPath === `/` && item === "home"
                   ? "lg:bg-neutral-900 font-bold"
                   : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
               }
