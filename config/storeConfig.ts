@@ -49,7 +49,7 @@ export const storeConfig = {
         "our sweaters will keep you the perfect temperature while looking cool as hell.",
       productType: "sweatshirt",
       image:
-        "https://littlebuilds.s3.amazonaws.com/foodthings/banana-sweatshirt-feature.png",
+        "https://littlebuilds.s3.amazonaws.com/foodthings/broccoli-sweatshirt-feature.png",
       buttonText: "shop sweatshirts"
     },
     {
@@ -63,11 +63,19 @@ export const storeConfig = {
     {
       name: "tumblers",
       description:
-        "our tumblers are perfect for keeping your drinks cold or hot. or both. whatever you're into. you freeak",
+        "our tumblers are perfect for keeping your drinks cold or hot. or both. whatever you're into. you freak",
       productType: "mug",
       image:
-        "https://littlebuilds.s3.amazonaws.com/foodthings/broccoli-tumbler.png",
+        "https://littlebuilds.s3.amazonaws.com/foodthings/breakfast-tumbler.png",
       buttonText: "shop tumblers"
+    },
+    {
+      name: "kids tees",
+      description: "our kids tees are perfect for your little foodie. ",
+      productType: "kids tee",
+      image:
+        "https://littlebuilds.s3.amazonaws.com/foodthings/kids-chicken-wings-tee.png",
+      buttonText: "shop kids tees"
     }
   ]
 }
