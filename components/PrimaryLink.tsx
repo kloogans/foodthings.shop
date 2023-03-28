@@ -1,12 +1,12 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 interface PrimaryLinkProps {
-  href: string;
-  text?: string;
-  className?: string;
-  display?: boolean;
-  isExternal?: boolean;
+  href: string
+  text?: string
+  className?: string
+  display?: boolean
+  isExternal?: boolean
 }
 
 const PrimaryLink: React.FC<PrimaryLinkProps> = ({
@@ -14,13 +14,13 @@ const PrimaryLink: React.FC<PrimaryLinkProps> = ({
   text = "view",
   className = "",
   display = false,
-  isExternal = false,
+  isExternal = false
 }) => {
-  let classList = `block w-full text-center py-2 px-4 border-4 border-black hover:bg-secondary focus:bg-secondary hover:text-white focus:text-white transition text-md font-bold text-black`;
+  let classList = `block w-full text-center py-2 px-4 border-4 border-black hover:bg-secondary focus:bg-secondary hover:text-white focus:text-white transition text-md font-bold text-black`
 
   if (display)
     classList =
-      "mb-3 block w-full text-center py-3 px-4 border-4 border-black bg-primary hover:bg-secondary focus:bg-secondary hover:text-white focus:text-white transition text-lg font-bold text-black";
+      "mb-3 block w-full text-center py-3 px-4 border-4 border-black bg-secondary hover:bg-rose-900 focus:bg-rose-900 hover:text-white transition text-lg font-bold text-white"
 
   if (isExternal) {
     return (
@@ -33,14 +33,14 @@ const PrimaryLink: React.FC<PrimaryLinkProps> = ({
       >
         {text}
       </a>
-    );
+    )
   }
 
   return (
     <Link href={href} title={text} className={`${classList} ${className}`}>
       {text}
     </Link>
-  );
-};
+  )
+}
 
-export default PrimaryLink;
+export default PrimaryLink

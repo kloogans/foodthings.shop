@@ -91,6 +91,8 @@ button {
 
 .snipcart-item-line__container {
   background: white !important;
+  border: 8px solid black;
+  margin-bottom: 0 !important;
 }
 
 .snipcart-item-quantity__quantity {
@@ -181,7 +183,8 @@ button {
   border-color: black;
 }
 
-.snipcart-item-line {
+.snipcart-item-line,
+.snipcart-cart-summary {
   box-shadow: none;
   @apply border-solid border-4 border-black;
 }

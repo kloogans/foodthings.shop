@@ -97,6 +97,7 @@ const SubMenu = ({ items }: { items: string[] }) => {
               const formattedName = subItem.split(" ").join("-")
               return (
                 <li
+                  key={subItem}
                   className={`md:min-w-[118px] text-center w-full group text-white ${
                     isOdd ? "last:col-span-2 lg:last:col-span-1" : ""
                   }`}
@@ -144,10 +145,11 @@ export const NavMenu = ({ show = true, setShowMenu }) => {
     >
       {MENU_ITEMS.map((item) => {
         if (typeof item === "object") {
-          return <SubMenu items={item} />
+          return <SubMenu key={item[0]} items={item} />
         }
         return (
           <li
+            key={item}
             className={`md:min-w-[118px] text-center w-full lg:h-full ${
               oddAmountOfMenuItems ? "last:col-span-2 lg:last:col-span-1" : ""
             }`}

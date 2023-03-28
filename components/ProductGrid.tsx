@@ -23,7 +23,7 @@ const ProductGrid = ({ products }) => {
       >
         {isHome && (
           <FeaturedCategories
-            products={storeConfig.featuredProductData}
+            products={storeConfig.featuredCategories}
             setShowFeaturedProducts={setShowFeaturedCategories}
           />
         )}

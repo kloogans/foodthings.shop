@@ -1,3 +1,33 @@
+export interface FeaturedProduct {
+  name: string
+  image: string | string[]
+  link: string
+  description: string
+  price: number
+  productType: string
+  isFeatured: boolean
+  featuredBackground?: string
+}
+
+export interface FeaturedCategory {
+  name: string
+  description: string
+  productType: string
+  image: string
+  buttonText: string
+}
+
+interface StoreConfig {
+  storeName: string
+  supportEmail: string
+  description: string
+  logo: string
+  seoImage: string
+  storeUrl: string
+  featuredCategories: FeaturedCategory[]
+  featuredProducts: FeaturedProduct[]
+}
+
 export const storeConfig = {
   storeName: "Food Things",
   supportEmail: "support@foodthings.shop",
@@ -6,7 +36,7 @@ export const storeConfig = {
   logo: "/assets/logo.svg",
   seoImage: "https://littlebuilds.s3.us-east-1.amazonaws.com/seo-image.jpg",
   storeUrl: "https://foodthings.shop",
-  featuredProductData: [
+  featuredCategories: [
     {
       name: "fanny packs",
       description:
@@ -77,5 +107,93 @@ export const storeConfig = {
         "https://littlebuilds.s3.amazonaws.com/foodthings/kids-chicken-wings-tee.png",
       buttonText: "shop kids tees"
     }
+  ],
+  featuredProducts: [
+    {
+      name: "chicken wings tee",
+      description: "chicken wings tee description",
+      productType: "tee",
+      price: 35,
+      image: "/assets/mockups/chicken-wings-tee.png",
+      link: "aop-tees/chicken-wings-aop-tee",
+      isFeatured: true,
+      featuredBackground: "/assets/vectors/chicken-wings.svg"
+    },
+    {
+      name: "banana hoodie",
+      description:
+        "our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. ",
+      productType: "hoodie",
+      price: 35,
+      image: [
+        "/assets/mockups/banana-hoodie.png",
+        "/assets/mockups/banana-hoodie-2.png"
+      ],
+      link: "hoodies/banana-hoodie",
+      isFeatured: false
+    },
+
+    {
+      name: "donuts tote bag",
+      description:
+        "this tote bag is perfect for carrying all of your stuff. or just your lunch.",
+      productType: "bag",
+      price: 30,
+      image: [
+        "/assets/mockups/donuts-tote-1.png",
+        "/assets/mockups/donuts-tote-2.png"
+      ],
+      link: "bags/donuts-tote",
+      isFeatured: false
+    },
+    {
+      name: "pizza fanny pack",
+      description:
+        "this fanny pack is perfect for carrying all of your stuff. or just your lunch.",
+      productType: "bag",
+      price: 35,
+      image: "/assets/mockups/pizza-fanny-pack-feature.png",
+      link: "fanny-packs/pizza-fanny-pack",
+      isFeatured: true,
+      featuredBackground: "/assets/vectors/pizza.svg"
+    },
+
+    {
+      name: "crippling anxiety tee",
+      description:
+        "this tee is perfect for wearing to the grocery store or the gym. or both. whatever you're into. you freak",
+      productType: "tee",
+      price: 24,
+      image: [
+        "/assets/mockups/crippling-anxiety-tee-1.png",
+        "/assets/mockups/crippling-anxiety-tee-2.png"
+      ],
+      link: "tees/crippling-anxiety-orange-tee",
+      isFeatured: false
+    },
+    {
+      name: "broccoli tumbler",
+      description:
+        "our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. ",
+      productType: "hoodie",
+      price: 35,
+      image: [
+        "/assets/mockups/broccoli-tumbler-1.png",
+        "/assets/mockups/broccoli-tumbler-2.png"
+      ],
+      link: "hoodies/banana-hoodie",
+      isFeatured: false
+    },
+
+    {
+      name: "donuts crop tee",
+      description: "donuts crop tee description",
+      productType: "crop-tee",
+      price: 28,
+      image: "/assets/mockups/donuts-crop-tee-feature.png",
+      link: "crop-tees/donuts-crop-tee",
+      isFeatured: true,
+      featuredBackground: "/assets/vectors/donuts.svg"
+    }
   ]
-}
+} as StoreConfig
