@@ -72,7 +72,7 @@ const SubMenu = ({ items }: { items: string[] }) => {
           {/* back button */}
           <button
             onClick={() => setShow(false)}
-            className={`flex items-center justify-center gap-1 py-2 text-white transition lg:hidden`}
+            className={`flex items-center justify-center col-span-2 gap-1 py-2 text-white transition lg:hidden`}
           >
             {/* left arrow svg icon */}
             <svg
@@ -99,7 +99,7 @@ const SubMenu = ({ items }: { items: string[] }) => {
                 <li
                   key={subItem}
                   className={`md:min-w-[118px] text-center w-full group text-white ${
-                    isOdd ? "last:col-span-2 lg:last:col-span-1" : ""
+                    isOdd ? "lg:last:col-span-1" : ""
                   }`}
                 >
                   <Link
