@@ -53,7 +53,7 @@ const TermsPage = () => {
       <h1 className="text-3xl md:text-5xl text-black text-center leading-none mb-4 slab">
         terms of sale
       </h1>
-      <div className="max-w-2xl mx-auto prose text-black child:lowercase mb-4">
+      <div className="max-w-2xl mx-auto prose text-black child:lowercase mb-4 px-2">
         <h2 className="text-black">What&apos;s your return policy?</h2>
         <p>
           We don&apos;t offer returns and exchanges, but if there&apos;s
