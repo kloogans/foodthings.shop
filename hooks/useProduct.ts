@@ -17,7 +17,7 @@ export const useProduct = (product) => {
 
   const [images, setImages] = useState(() => {
     const variant = activeVariant.files.find(({ type }) => type === "preview")
-    return [variant.preview_url]
+    return [variant ? variant?.preview_url || "" : product.thumbnail_url || ""]
   })
 
   const previewFilePath = `/assets/product-design-previews/${product.name
@@ -42,20 +42,28 @@ export const useProduct = (product) => {
   const [selectedImage, setSelectedImage] = useState(images[0])
 
   useEffect(() => {
-    const newVariant = variants.find(
-      (v) => v.external_id === activeVariantExternalId
-    )
+    if (variants.length > 1) {
+      const newVariant = variants.find(
+        (v) => v.external_id === activeVariantExternalId
+      )
 
-    const newVariantFile = newVariant.files.find(
-      ({ type }) => type === "preview"
-    )
+      const newVariantFile = newVariant.files.find(({ type }) => {
+        if (type === "preview") {
+          return type
+        }
 
-    const newImages = [...images]
-    newImages[0] = newVariantFile.preview_url
-    setActiveVariant(newVariant)
-    setActiveVariantFile(newVariantFile)
-    setImages(newImages)
-    setSelectedImage(newImages[0])
+        return null
+      })
+
+      const newImages = [...images]
+      if (newVariantFile) {
+        newImages[0] = newVariantFile.preview_url
+        setActiveVariant(newVariant)
+        setActiveVariantFile(newVariantFile)
+        setImages(newImages)
+        setSelectedImage(newImages[0])
+      }
+    }
   }, [activeVariantExternalId])
 
   const formattedPrice = new Intl.NumberFormat("en-US", {

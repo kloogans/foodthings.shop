@@ -111,7 +111,8 @@ export const storeConfig = {
   featuredProducts: [
     {
       name: "chicken wings tee",
-      description: "chicken wings tee description",
+      description:
+        "introducing the cluckin dope chicken wings tee! Featuring an all-over print of juicy chicken wings, it's the perfect attire for any wing-loving foodie or casual BBQ enthusiast.",
       productType: "tee",
       price: 35,
       image: "/assets/mockups/chicken-wings-tee.png",
@@ -149,7 +150,7 @@ export const storeConfig = {
     {
       name: "pizza fanny pack",
       description:
-        "this fanny pack is perfect for carrying all of your stuff. or just your lunch.",
+        "The perfect accessory for any pizza lover is here. Our pizza fanny pack has enough room to store all of your essentials comfortably. You'll never have to sacrifice style for convenience again.",
       productType: "bag",
       price: 35,
       image: "/assets/mockups/pizza-fanny-pack-feature.png",
@@ -187,7 +188,8 @@ export const storeConfig = {
 
     {
       name: "donuts crop tee",
-      description: "donuts crop tee description",
+      description:
+        "Make a sweet statement with this cute and trendy donuts crop top tee! It's perfect for adding a playful touch to any outfit. This top is sure to satisfy your sweet tooth and turn heads wherever you go.",
       productType: "crop-tee",
       price: 28,
       image: "/assets/mockups/donuts-crop-tee-feature.png",

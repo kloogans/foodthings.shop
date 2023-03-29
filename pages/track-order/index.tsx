@@ -1,41 +1,40 @@
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import BreadCrumbs from "components/BreadCrumbs";
-import { Icon } from "components/Icon";
-import { ProductPageLayout } from "components/ProductPageLayout";
+import { useRouter } from "next/router"
+import React, { useState } from "react"
+import BreadCrumbs from "components/BreadCrumbs"
+import { Icon } from "components/Icon"
+import { ProductPageLayout } from "components/ProductPageLayout"
 
 const fetchOrderById = async (orderId: string) => {
   try {
-    const order = await fetch(`/api/orders/${orderId}`);
-    console.log(await order.json());
-    return order;
+    const order = await fetch(`/api/orders/${orderId}`)
+    return order
   } catch (error) {
-    return null;
+    return null
   }
-};
+}
 
 const OrderPage = () => {
-  const [orderId, setOrderId] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [notFound, setNotFound] = useState(false);
-  const router = useRouter();
+  const [orderId, setOrderId] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [notFound, setNotFound] = useState(false)
+  const router = useRouter()
 
   const handleOrderLookup = async (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-    const order = await fetchOrderById(orderId.toUpperCase());
+    e.preventDefault()
+    setLoading(true)
+    const order = await fetchOrderById(orderId.toUpperCase())
     if (!order) {
-      setNotFound(true);
-      setLoading(false);
+      setNotFound(true)
+      setLoading(false)
       setTimeout(() => {
-        setNotFound(false);
-      }, 3000);
-      return;
+        setNotFound(false)
+      }, 3000)
+      return
     }
-    router.push(`/track-order/${orderId}`);
-    setLoading(false);
-    return;
-  };
+    router.push(`/track-order/${orderId}`)
+    setLoading(false)
+    return
+  }
 
   return (
     <ProductPageLayout noProducts={false}>
@@ -80,7 +79,7 @@ const OrderPage = () => {
         </div>
       </div>
     </ProductPageLayout>
-  );
-};
+  )
+}
 
-export default OrderPage;
+export default OrderPage

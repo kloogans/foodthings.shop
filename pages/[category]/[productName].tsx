@@ -31,8 +31,6 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
     images
   } = useProduct(product)
 
-  console.log(images)
-
   const hasMultipleImages = images.length > 1
   const description = getProductDescription(product.name)
   const productType = getProductType(product.name)
@@ -222,7 +220,9 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
                 data-item-price={activeVariant.retail_price}
                 data-item-url={`/api/products/${activeVariantExternalId}`}
                 data-item-description={activeVariant.name}
-                data-item-image={activeVariantFile.preview_url}
+                data-item-image={
+                  activeVariantFile ? activeVariantFile.preview_url || "" : ""
+                }
                 data-item-name={product.name}
               >
                 add to cart

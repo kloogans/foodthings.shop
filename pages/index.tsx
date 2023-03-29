@@ -30,8 +30,6 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
     featuredBackground
   } = product
 
-  console.log(image)
-
   return (
     <article
       className={`w-full flex flex-col relative group !cursor-pointer group ${
@@ -112,7 +110,7 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
               : "w-full"
           }`}
         >
-          <p className="mb-1 text-lg font-bold text-black w-full text-center">
+          <p className="mb-1 text-xl font-bold text-black w-full text-center">
             {name}
           </p>
 
@@ -121,13 +119,13 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
           </p>
 
           <p
-            className={`mb-1 font-bold text-black w-full text-center ${
+            className={`mb-1 font-bold text-black w-full max-w-sm mx-auto text-left lowercase ${
               !isFeatured ? "hidden" : ""
             }`}
           >
             {description}
           </p>
-          <div className=" p-3 flex flex-col items-center w-full max-w-sm mx-auto">
+          <div className=" py-3 flex flex-col items-center w-full max-w-sm mx-auto">
             <PrimaryLink href={`/${link}`} display />
           </div>
         </div>
