@@ -116,7 +116,7 @@ export const storeConfig = {
       productType: "tee",
       price: 35,
       image: "/assets/mockups/chicken-wings-tee.png",
-      link: "aop-tees/chicken-wings-aop-tee",
+      link: "tees/chicken-wings-aop-tee",
       isFeatured: true,
       featuredBackground: "/assets/vectors/chicken-wings.svg"
     },
@@ -144,7 +144,7 @@ export const storeConfig = {
         "/assets/mockups/donuts-tote-1.png",
         "/assets/mockups/donuts-tote-2.png"
       ],
-      link: "bags/donuts-tote",
+      link: "totes/donuts-tote",
       isFeatured: false
     },
     {
@@ -154,7 +154,7 @@ export const storeConfig = {
       productType: "bag",
       price: 35,
       image: "/assets/mockups/pizza-fanny-pack-feature.png",
-      link: "fanny-packs/pizza-fanny-pack",
+      link: "fanny-packs/pizza-fanny-pack-bag",
       isFeatured: true,
       featuredBackground: "/assets/vectors/pizza.svg"
     },
@@ -182,7 +182,7 @@ export const storeConfig = {
         "/assets/mockups/broccoli-tumbler-1.png",
         "/assets/mockups/broccoli-tumbler-2.png"
       ],
-      link: "hoodies/banana-hoodie",
+      link: "tumblers/broccoli-tumbler",
       isFeatured: false
     },
 

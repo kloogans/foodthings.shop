@@ -11,7 +11,7 @@ const NotFoundPage = () => {
       <h1
         className={`text-5xl text-black slab mb-2 leading-none flex flex-col justify-center items-center`}
       >
-        fuck {face}
+        oh no {face}
       </h1>
       <h2 className="text-black text-lg font-bold leading-none mb-4">
         couldn&apos;t find that page
