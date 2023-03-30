@@ -119,7 +119,7 @@ export const AnnouncementBanner = ({
   return (
     <div className="relative w-full flex items-center justify-center px-2 bg-black z-[100]">
       <button
-        className="absolute top-0 right-0 px-4 h-full flex items-center group"
+        className="absolute top-0 right-0 p-2 md:p-4 h-full flex items-start md:items-center group"
         onClick={handleHideBanner}
       >
         <svg

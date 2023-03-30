@@ -188,7 +188,7 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
               </div>
             </div>
 
-            <div className="px-2 w-full flex flex-col items-center justify-center">
+            <div className="px-4 w-full flex flex-col items-center justify-center">
               <h1 className="text-black slab text-4xl lg:text-6xl font-bold leading-none mb-2">
                 {product.name}
               </h1>

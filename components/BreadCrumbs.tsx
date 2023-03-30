@@ -8,7 +8,7 @@ const BreadCrumbs: React.FC<{ className?: string }> = ({ className = "" }) => {
 
   return (
     <div
-      className={`flex items-center justify-center bg-black py-2 px-4 text-white text-sm ${className}`}
+      className={`flex items-center justify-center bg-black py-2 px-4 text-white text-xs md:text-sm ${className}`}
     >
       <Link href={`/`} className="hover:text-secondary" title="home">
         <strong>home</strong>
