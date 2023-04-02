@@ -112,7 +112,7 @@ export const storeConfig = {
     {
       name: "chicken wings tee",
       description:
-        "introducing the cluckin dope chicken wings tee! Featuring an all-over print of juicy chicken wings, it's the perfect attire for any wing-loving foodie or casual BBQ enthusiast.",
+        "Introducing the chicken wings tee! This shirt is cluckin dope LMAO. Featuring an all-over print of juicy chicken wings, it's the perfect attire for any wing-loving foodie or casual BBQ enthusiast.",
       productType: "tee",
       price: 35,
       image: "/assets/mockups/chicken-wings-tee.png",
