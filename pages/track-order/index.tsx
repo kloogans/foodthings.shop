@@ -37,7 +37,7 @@ const OrderPage = () => {
   }
 
   return (
-    <ProductPageLayout noProducts={false}>
+    <ProductPageLayout noProducts={false} isFeatured={false}>
       <div className="text-center relative mb-10">
         <div className="flex flex-col items-center justify-start relative p-0 md:p-4 z-10 bg-white shadow-md border-8 border-black md:min-h-[40rem]">
           <BreadCrumbs className="mb-1 self-start" />

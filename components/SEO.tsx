@@ -15,6 +15,7 @@ interface SEOProps {
   title?: string
   url?: string
   isProduct?: boolean
+  isFeaturedProduct?: boolean
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -22,8 +23,10 @@ export const SEO: React.FC<SEOProps> = ({
   description,
   image,
   url,
-  isProduct = false
+  isProduct = false,
+  isFeaturedProduct = false
 }) => {
+  console.log(isFeaturedProduct)
   const formattedTitle = (title: string) => {
     return title
       .split("-")
@@ -53,10 +56,7 @@ export const SEO: React.FC<SEOProps> = ({
         <meta name="twitter:url" content={url} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta
-          name="twitter:card"
-          content={isProduct ? "summary_image" : "summary_large_image"}
-        />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={image} />
       </Head>
       <Script

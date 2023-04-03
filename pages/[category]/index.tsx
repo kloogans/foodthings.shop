@@ -16,7 +16,11 @@ const CategoryPage: React.FC<ProductPageProps> = ({ products }) => {
   }, [products])
 
   return (
-    <ProductPageLayout noProducts={products.length < 1} isCategoryPage>
+    <ProductPageLayout
+      noProducts={products.length < 1}
+      isCategoryPage
+      isFeatured={false}
+    >
       <ProductGrid products={currentProducts} />
       <div id="loadMore" />
     </ProductPageLayout>

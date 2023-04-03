@@ -1,25 +1,25 @@
-import { GetServerSideProps } from "next";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import BreadCrumbs from "components/BreadCrumbs";
-import { Icon } from "components/Icon";
-import PrimaryLink from "components/PrimaryLink";
-import { ProductPageLayout } from "components/ProductPageLayout";
-import SkeletonLoader from "components/SkeletonLoader";
-import { printful } from "lib/printful-client";
+import { GetServerSideProps } from "next"
+import Image from "next/image"
+import { useRouter } from "next/router"
+import React, { useState } from "react"
+import BreadCrumbs from "components/BreadCrumbs"
+import { Icon } from "components/Icon"
+import PrimaryLink from "components/PrimaryLink"
+import { ProductPageLayout } from "components/ProductPageLayout"
+import SkeletonLoader from "components/SkeletonLoader"
+import { printful } from "lib/printful-client"
 
 const ProgressBar = ({ status }) => {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0)
   const pendingClass = `${
     status === "pending" ? "bg-yellow-400" : "bg-zinc-400"
   }
 ${status === "being printed" || status === "shipped" ? "bg-green-400" : ""}
-`;
+`
 
   const printingClass = `${
     status === "being printed" ? "bg-yellow-400" : "bg-zinc-400"
-  } ${status === "shipped" ? "bg-green-400" : ""}`;
+  } ${status === "shipped" ? "bg-green-400" : ""}`
 
   return (
     <ul className="w-full grid grid-cols-3 gap-1 mb-4">
@@ -34,49 +34,49 @@ ${status === "being printed" || status === "shipped" ? "bg-green-400" : ""}
         }`}
       ></li>
     </ul>
-  );
-};
+  )
+}
 
 const OrderPage = ({ order }) => {
-  const router = useRouter();
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const router = useRouter()
+  const [imageLoaded, setImageLoaded] = useState(false)
   const {
     id,
     status,
     tracking,
-    product: { files, name },
-  } = order;
-  const productImage = files[files.length - 1].preview_url;
-  let orderStatus = status;
-  let orderStatusDescription = "your order is being processed";
+    product: { files, name }
+  } = order
+  const productImage = files[files.length - 1].preview_url
+  let orderStatus = status
+  let orderStatusDescription = "your order is being processed"
   switch (status) {
     case "pending":
-      orderStatus = "pending";
-      break;
+      orderStatus = "pending"
+      break
     case "inprocess":
-      orderStatus = "being printed";
+      orderStatus = "being printed"
       orderStatusDescription =
-        "your order is currently being printed, inspected for quality, and packed.";
-      break;
+        "your order is currently being printed, inspected for quality, and packed."
+      break
     case "shipped":
-      orderStatus = "shipped";
-      orderStatusDescription = "it's on its way!";
-      break;
+      orderStatus = "shipped"
+      orderStatusDescription = "it's on its way!"
+      break
     case "canceled":
-      orderStatus = "canceled";
-      break;
+      orderStatus = "canceled"
+      break
     case "returned":
-      orderStatus = "returned";
-      break;
+      orderStatus = "returned"
+      break
     case "fulfilled":
-      orderStatus = "shipped";
-      break;
+      orderStatus = "shipped"
+      break
     default:
-      orderStatus = "pending";
+      orderStatus = "pending"
   }
 
   return (
-    <ProductPageLayout noProducts={false}>
+    <ProductPageLayout noProducts={false} isFeatured={false}>
       <div className="text-center relative mb-10">
         <div className="flex flex-col items-center justify-center relative p-0 md:p-4 z-10 bg-white shadow-md border-8 border-black">
           <BreadCrumbs className="mb-1 self-start" />
@@ -148,31 +148,31 @@ const OrderPage = ({ order }) => {
         </div>
       </div>
     </ProductPageLayout>
-  );
-};
+  )
+}
 
-export default OrderPage;
+export default OrderPage
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { orderId } = context.query;
+  const { orderId } = context.query
 
   try {
     const {
       code,
       result,
-      result: { status, external_id, shipping, created, items, shipments },
-    } = await printful.get(`orders/@${orderId}`);
-    console.log(items);
+      result: { status, external_id, shipping, created, items, shipments }
+    } = await printful.get(`orders/@${orderId}`)
+    console.log(items)
     if (code !== 200) {
       return {
         redirect: {
           permanent: false,
-          destination: `/404`,
-        },
-      };
+          destination: `/404`
+        }
+      }
     }
 
-    const { name, files } = items[0];
+    const { name, files } = items[0]
 
     let order = {
       id: external_id,
@@ -180,29 +180,29 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       shipping,
       created,
       product: { name, files },
-      tracking: null,
-    };
+      tracking: null
+    }
 
     if (status === "fulfilled") {
-      const { tracking_url, carrier } = shipments[0];
+      const { tracking_url, carrier } = shipments[0]
       order.tracking = {
         trackingUrl: tracking_url,
-        carrier,
-      };
+        carrier
+      }
     }
 
     return {
       props: {
-        order: order || null,
-      },
-    };
+        order: order || null
+      }
+    }
   } catch (e) {
-    console.log(e.message);
+    console.log(e.message)
     return {
       redirect: {
         permanent: false,
-        destination: `/404`,
-      },
-    };
+        destination: `/404`
+      }
+    }
   }
-};
+}

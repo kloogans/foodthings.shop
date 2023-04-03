@@ -10,6 +10,7 @@ import { getProductType } from "lib/getProductType"
 import { getProductDescription } from "lib/getProductDescription"
 import { ProductPageLayout } from "components/ProductPageLayout"
 import BreadCrumbs from "components/BreadCrumbs"
+import { storeConfig } from "config/storeConfig"
 const VariantPicker = dynamic(() => import("../../components/VariantPicker"))
 
 const SkeletonLoader = dynamic(() => import("../../components/SkeletonLoader"))
@@ -37,11 +38,18 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
   // @ts-ignore
   const isSquare = productType !== "sticker" && productType !== "mug"
 
+  const { featuredProducts } = storeConfig
+
+  const isOnFeaturedProductsList = featuredProducts.find(
+    (featuredProduct) => featuredProduct.name === product.name
+  )
+
   return (
     <ProductPageLayout
       noProducts={!product}
       seoImage={product.thumbnail_url}
       seoDescription={description}
+      isFeatured={isOnFeaturedProductsList != null}
     >
       <div className="text-center relative mb-10">
         {/* <div className="absolute top-0 hidden md:block left-0 bg-black shadow-md w-full h-full -translate-x-[1rem] transition translate-y-[1rem] z-0" /> */}

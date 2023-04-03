@@ -177,7 +177,7 @@ const IndexPage: React.FC<ProductPageProps> = ({ products }) => {
   }, [offset])
 
   return (
-    <ProductPageLayout noProducts={products.length < 1}>
+    <ProductPageLayout noProducts={products.length < 1} isFeatured={false}>
       <SEO />
       <Heading />
       {/* <ProductGrid
