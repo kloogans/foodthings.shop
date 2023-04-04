@@ -39,7 +39,7 @@ export const SEO: React.FC<SEOProps> = ({
   description =
     (description || DEFAULT_DESCRIPTION)
       .split(/\.|\?|\!/)
-      .slice(0, 2)
+      .slice(0, 3)
       .join(".") + "."
   image = image || DEFAULT_IMAGE
   url = url || DEFAULT_URL
