@@ -36,7 +36,11 @@ export const SEO: React.FC<SEOProps> = ({
   }
 
   title = title ? `${formattedTitle(title)} / ${storeName}` : DEFAULT_TITLE
-  description = description || DEFAULT_DESCRIPTION
+  description =
+    (description || DEFAULT_DESCRIPTION)
+      .split(/\.|\?|\!/)
+      .slice(0, 2)
+      .join(".") + "."
   image = image || DEFAULT_IMAGE
   url = url || DEFAULT_URL
 
