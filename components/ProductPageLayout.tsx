@@ -1,3 +1,4 @@
+import { storeConfig } from "config/storeConfig"
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { SEO } from "./SEO"
@@ -31,7 +32,7 @@ export const ProductPageLayout: React.FC<ProductPageLayoutProps> = ({
       <>
         <SEO
           title={"something went wrong :("}
-          url={`https://foodthings.shop${asPath}`}
+          url={`${storeConfig.storeUrl}/${asPath}`}
           isFeaturedProduct={isFeatured}
           image={
             isCategoryPage
@@ -56,7 +57,7 @@ export const ProductPageLayout: React.FC<ProductPageLayoutProps> = ({
     <>
       <SEO
         title={path}
-        url={`https://foodthings.shop${asPath}`}
+        url={`${storeConfig.storeUrl}/${asPath}`}
         description={seoDescription}
         image={image}
         isProduct={seoImage != null}

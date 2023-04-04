@@ -46,7 +46,7 @@ All mugs are dishwasher-safe and microwave-safe`
   if (name.includes("tote bag"))
     return `Our tote is a sturdy and versatile bag with dual handles made of 100% natural cotton bull denim that can carry up to 44lbs of weight. 
     
-The bag is made of 100% spun polyester fabric and it has a capacity of 2.6 US gal and its size is 15″ × 15″.`
+The bag is made of 100% spun polyester fabric and it has a capacity of 2.6 US gallons and its size is 15″ × 15″.`
 
   if (name.includes("fanny pack"))
     return `Our fanny pack is made of water-resistant polyester fabric. It features an inside pocket for valuables, adjustable straps, and is a favorite accessory among festival-goers, tourists, and fashion enthusiasts. 

@@ -21,6 +21,7 @@ interface StoreConfig {
   storeName: string
   supportEmail: string
   description: string
+  twitterHandle: string
   logo: string
   seoImage: string
   storeUrl: string
@@ -31,11 +32,12 @@ interface StoreConfig {
 export const storeConfig = {
   storeName: "Food Things",
   supportEmail: "support@foodthings.shop",
+  twitterHandle: "@fuckedupfoods",
   description:
     "We offer a wide variety of food-themed clothing and accessories that are perfect for any foodie. From graphic tees to aprons, hoodies, bags, and even stickers, we have everything you need to express your passion for good, bad, and weird eats. Browse our collection and add some flavor to your wardrobe with Food Things.",
   logo: "/assets/logo.svg",
   seoImage: "https://littlebuilds.s3.us-east-1.amazonaws.com/seo-image.jpg",
-  storeUrl: "https://foodthings.shop",
+  storeUrl: "https://foodthings.net",
   featuredCategories: [
     {
       name: "fanny packs",
@@ -111,8 +113,9 @@ export const storeConfig = {
   featuredProducts: [
     {
       name: "chicken wings tee",
-      description:
-        "Introducing the chicken wings tee! This shirt is cluckin dope LMAO. Featuring an all-over print of juicy chicken wings, it's the perfect attire for any wing-loving foodie or casual BBQ enthusiast.",
+      description: `This tee is a must-have for chicken wing enthusiasts! Featuring a mouth-watering print of delicious chicken wings all over it, the chicken wing shirt is perfect for those who can't get enough of their favorite snack. Made from comfortable and durable materials, it's also great for casual wear or for showing off your love for chicken wings at your next game day party. 
+        
+So whether you like them hot and spicy or mild and saucy, this chicken wing t-shirt is sure to make you and everyone around you hungry for more.`,
       productType: "tee",
       price: 35,
       image: "/assets/mockups/chicken-wings-tee.png",
@@ -122,8 +125,9 @@ export const storeConfig = {
     },
     {
       name: "banana hoodie",
-      description:
-        "our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. ",
+      description: `This hoodie is a unique and playful addition to any wardrobe. Featuring a vibrant and eye-catching banana print, it's perfect for anyone who wants to add a touch of fun to their outfit. Made from comfortable materials and with a cozy hood, this hoodie is perfect for lounging around or running errands in style. 
+        
+Our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. `,
       productType: "hoodie",
       price: 35,
       image: [
@@ -136,21 +140,23 @@ export const storeConfig = {
 
     {
       name: "donuts tote bag",
-      description:
-        "this tote bag is perfect for carrying all of your stuff. or just your lunch.",
+      description: `This tote bag is perfect for donut lovers! Featuring a fun and playful design of delicious donuts printed all over it, this bag is both functional and stylish. It's sure to add a touch of sweetness to any outfit or shopping trip. 
+        
+Our bags are made of 100% spun polyester fabric and it has a capacity of 2.6 US gallons.`,
       productType: "bag",
       price: 30,
       image: [
         "/assets/mockups/donuts-tote-1.png",
         "/assets/mockups/donuts-tote-2.png"
       ],
-      link: "totes/donuts-tote",
+      link: "totes/donuts-tote-bag",
       isFeatured: false
     },
     {
       name: "pizza fanny pack",
-      description:
-        "The perfect accessory for any pizza lover is here. Our pizza fanny pack has enough room to store all of your essentials comfortably. You'll never have to sacrifice style for convenience again.",
+      description: `This fanny pack is a must-have for pizza lovers on the go. With a fun and appetizing print of delicious pizza slices all over it, it's a stylish and functional accessory for carrying your essentials.
+        
+The adjustable waist strap ensures a comfortable and secure fit, while the multiple compartments provide ample space for your phone, wallet, keys, and more. Perfect for travel, concerts, or any hands-free activity where you want to keep your valuables close and your love for pizza on display.`,
       productType: "bag",
       price: 35,
       image: "/assets/mockups/pizza-fanny-pack-feature.png",
@@ -161,8 +167,9 @@ export const storeConfig = {
 
     {
       name: "crippling anxiety tee",
-      description:
-        "this tee is perfect for wearing to the grocery store or the gym. or both. whatever you're into. you freak",
+      description: `This t-shirt is a hilarious way to let everyone know you're a little high-strung. Featuring the words "crippling anxiety" printed on it, this shirt is perfect for those who love to joke about their stress levels.
+        
+Made from soft and comfortable materials, it's also a comfy and trendy way to show off your sarcastic sense of humor. Wear it to your next social gathering and watch as your friends either laugh or get a little worried!`,
       productType: "tee",
       price: 24,
       image: [
@@ -174,9 +181,10 @@ export const storeConfig = {
     },
     {
       name: "broccoli tumbler",
-      description:
-        "our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. ",
-      productType: "hoodie",
+      description: `This tumbler cup is a fun and playful way to show off your love for healthy eating. Featuring a unique and quirky design of broccoli printed all over it, this cup is perfect for carrying your favorite hot or cold beverage on the go. Made from high-quality materials, it's also durable and easy to clean. 
+        
+Whether you're sipping on green tea or a refreshing smoothie, this tumbler cup is sure to add a touch of fun and whimsy to your daily routine.`,
+      productType: "tumbler",
       price: 35,
       image: [
         "/assets/mockups/broccoli-tumbler-1.png",
@@ -188,8 +196,9 @@ export const storeConfig = {
 
     {
       name: "donuts crop tee",
-      description:
-        "Make a sweet statement with this cute and trendy donuts crop top tee! It's perfect for adding a playful touch to any outfit. This top is sure to satisfy your sweet tooth and turn heads wherever you go.",
+      description: `This crop top t-shirt is a sweet and sassy addition to any wardrobe. With a fun and playful design of delicious donuts printed all over it, this shirt is perfect for donut lovers who want to show off their playful side. Made from soft and breathable materials, it's also comfortable and stylish for any occasion. 
+        
+Whether you're hitting the gym or hanging out with friends, this crop top is sure to turn heads and make everyone crave a sweet treat.`,
       productType: "crop-tee",
       price: 28,
       image: "/assets/mockups/donuts-crop-tee-feature.png",

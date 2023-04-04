@@ -1,3 +1,4 @@
+import { storeConfig } from "config/storeConfig"
 import Document, { Html, Head, Main, NextScript } from "next/document"
 
 class MyDocument extends Document {
@@ -26,7 +27,7 @@ class MyDocument extends Document {
             type="font/ttf"
           />
           <meta property="og:type" content="website" />
-          <meta property="og:site_name" content={`https://foodthings.shop`} />
+          <meta property="og:site_name" content={storeConfig.storeUrl} />
         </Head>
         <body className="antialiased">
           <Main />

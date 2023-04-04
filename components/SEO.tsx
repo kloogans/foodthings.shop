@@ -35,7 +35,7 @@ export const SEO: React.FC<SEOProps> = ({
       .join(" ")
   }
 
-  title = title ? `${formattedTitle(title)} | ${storeName}` : DEFAULT_TITLE
+  title = title ? `${formattedTitle(title)} / ${storeName}` : DEFAULT_TITLE
   description = description || DEFAULT_DESCRIPTION
   image = image || DEFAULT_IMAGE
   url = url || DEFAULT_URL
@@ -51,7 +51,7 @@ export const SEO: React.FC<SEOProps> = ({
         <meta property="og:image" content={image} />
         <meta property="og:description" content={description} />
         {/* Twitter */}
-        <meta name="twitter:creator" content="@kloogans" />
+        <meta name="twitter:creator" content={storeConfig.supportEmail} />
         <meta name="twitter:url" content={url} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />

@@ -30,13 +30,18 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
     featuredBackground
   } = product
 
+  const firstTwoSentencesOfDescription =
+    description
+      .split(/\.|\?|\!/)
+      .slice(0, 2)
+      .join(".") + "."
+
   return (
     <article
       className={`w-full flex flex-col relative group !cursor-pointer group ${
         isFeatured ? "col-span-2" : ""
       }`}
     >
-      {/* <div className="absolute hidden md:block top-0 left-0 bg-black w-full h-full shadow-md -translate-x-[1rem] transition translate-y-[1rem] z-0 md:group-hover:-translate-x-0 md:group-hover:-translate-y-0 md:group-focus:-translate-x-0 md:group-focus:-translate-y-0" /> */}
       <div
         style={{
           background: isFeatured
@@ -123,7 +128,7 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
               !isFeatured ? "hidden" : ""
             }`}
           >
-            {description}
+            {firstTwoSentencesOfDescription}
           </p>
           <div className=" py-3 flex flex-col items-center w-full max-w-sm mx-auto">
             <PrimaryLink href={`/${link}`} display />

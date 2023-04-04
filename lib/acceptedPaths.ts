@@ -29,5 +29,6 @@ export const ACCEPTED_PATHS = [
   "bandanas",
   "kids-aop-tees",
   "kids-tees",
-  "gym-bags"
+  "gym-bags",
+  "totes"
 ]

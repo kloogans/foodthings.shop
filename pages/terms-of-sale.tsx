@@ -1,41 +1,19 @@
 import Head from "next/head"
 import Script from "next/script"
 import BreadCrumbs from "components/BreadCrumbs"
+import { storeConfig } from "config/storeConfig"
+import { SEO } from "components/SEO"
 
-const SUPPORT_EMAIL = "support@foodthings.shop"
+const SUPPORT_EMAIL = storeConfig.supportEmail
 const TermsPage = () => {
   return (
     <div className="flex flex-col items-center justify-start relative p-0 md:p-4 z-10 bg-white shadow-md border-8 border-black md:min-h-[40rem]">
-      <Head>
-        <title>terms and conditions</title>
-        <meta
-          name="description"
-          content="shop t-shirts, hoodies, and accessories with your favorite fucked up designs."
-        />
-        {/* Facebook */}
-        <meta property="og:title" content={`fucked up shop`} />
-        <meta property="og:url" content={`https://foodthings.shop`} />
-        <meta
-          property="og:image"
-          content={`https://littlebuilds.s3.us-east-1.amazonaws.com/fedup-seo-image.jpg`}
-        />
-        <meta
-          property="og:description"
-          content={`shop t-shirts, hoodies, and accessories with your favorite fucked up designs.`}
-        />
-        {/* Twitter */}
-        <meta name="twitter:creator" content="@fuckedupfoods" />
-        <meta name="twitter:url" content={`https://foodthings.shop`} />
-        <meta name="twitter:title" content={`fucked up shop`} />
-        <meta
-          name="twitter:description"
-          content={`shop t-shirts, hoodies, and accessories with your favorite fucked up designs.`}
-        />
-        <meta
-          name="twitter:image"
-          content={`https://littlebuilds.s3.us-east-1.amazonaws.com/fedup-seo-image.jpg`}
-        />
-      </Head>
+      {/* write a two sentence description for the terms of sale for seo */}
+
+      <SEO
+        title="Terms of Sale"
+        description="Check out the terms and conditions of Food Things. Here you can find our return and exchange policies."
+      />
       <Script
         id="ga-script-1"
         strategy="lazyOnload"
