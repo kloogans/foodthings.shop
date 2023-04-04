@@ -26,7 +26,6 @@ export const SEO: React.FC<SEOProps> = ({
   isProduct = false,
   isFeaturedProduct = false
 }) => {
-  console.log(isFeaturedProduct)
   const formattedTitle = (title: string) => {
     return title
       .split("-")

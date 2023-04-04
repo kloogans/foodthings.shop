@@ -162,7 +162,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       result,
       result: { status, external_id, shipping, created, items, shipments }
     } = await printful.get(`orders/@${orderId}`)
-    console.log(items)
     if (code !== 200) {
       return {
         redirect: {

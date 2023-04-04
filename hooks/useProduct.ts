@@ -20,19 +20,16 @@ export const useProduct = (product) => {
     return [variant ? variant?.preview_url || "" : product.thumbnail_url || ""]
   })
 
-  const previewFilePath = `/assets/product-design-previews/${product.name
-    .split(" ")
-    .join("-")}.jpg`
+  // const previewFilePath = `/assets/product-design-previews/${product.name
+  //   .split(" ")
+  //   .join("-")}.jpg`
 
-  const previewImageExists = async () => {
-    return await fetch(previewFilePath).then((res) => res.ok)
-  }
+  // const previewImageExists = async () => {
+  //   return await fetch(previewFilePath).then((res) => res.ok)
+  // }
 
   const initImages = async () => {
-    const exists = await previewImageExists()
-    if (exists) {
-      setImages([...images, previewFilePath])
-    }
+    setImages([...images])
   }
 
   useEffect(() => {
