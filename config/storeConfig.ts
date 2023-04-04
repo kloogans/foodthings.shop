@@ -113,7 +113,7 @@ export const storeConfig = {
   featuredProducts: [
     {
       name: "chicken wings tee",
-      description: `This tee is a must-have for chicken wing enthusiasts! Featuring a mouth-watering print of delicious chicken wings all over it, the chicken wing shirt is perfect for those who can't get enough of their favorite snack. Made from comfortable and durable materials, it's also great for casual wear or for showing off your love for chicken wings at your next game day party. 
+      description: `Introducing the Chicken Wing Tee! Featuring a mouth-watering print of delicious chicken all over it, the chicken wing tee is perfect for those who can't get enough of their favorite snack. Made from comfortable and durable materials, it's also great for casual wear or for showing off your love for chicken wings at your next game day party. This is a must-have for fried chicken enthusiasts!
         
 So whether you like them hot and spicy or mild and saucy, this chicken wing t-shirt is sure to make you and everyone around you hungry for more.`,
       productType: "tee",
