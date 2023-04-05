@@ -99,6 +99,26 @@ button {
   margin-bottom: 0 !important;
 }
 
+.snipcart-order__invoice-number {
+  display: flex;
+  align-items: center;
+}
+
+.snipcart-order__box {
+  margin-bottom: 16px !important;
+}
+
+.snipcart-layout__content {
+  height: auto !important;
+  padding-bottom: 1rem;
+}
+
+.snipcart-order__invoice-number--highlight {
+  color: black !important;
+  font-weight: 900;
+  margin-left: 0.25rem;
+}
+
 .snipcart-item-quantity__quantity {
   border: none !important;
 }
