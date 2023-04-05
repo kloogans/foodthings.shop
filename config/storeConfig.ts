@@ -185,7 +185,7 @@ Made from soft and comfortable materials, it's also a comfy and trendy way to sh
         
 Whether you're sipping on green tea or a refreshing smoothie, this tumbler cup is sure to add a touch of fun and whimsy to your daily routine.`,
       productType: "tumbler",
-      price: 35,
+      price: 28,
       image: [
         "/assets/mockups/broccoli-tumbler-1.png",
         "/assets/mockups/broccoli-tumbler-2.png"
