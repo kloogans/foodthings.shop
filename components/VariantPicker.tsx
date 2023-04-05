@@ -48,7 +48,7 @@ const VariantPicker = ({ variants, ...props }) => {
           )
         })}
       </select>
-      <div
+      {/* <div
         className={`grid grid-cols-3 gap-2 place-items-center w-full  mt-4 child:p-2`}
       >
         {filteredVariants.map((variant) => {
@@ -80,7 +80,7 @@ const VariantPicker = ({ variants, ...props }) => {
             </div>
           )
         })}
-      </div>
+      </div> */}
     </div>
   )
 }
