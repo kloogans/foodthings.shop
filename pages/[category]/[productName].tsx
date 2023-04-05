@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { GetServerSideProps } from "next"
 import { printful } from "lib/printful-client"
 import { formatVariantName } from "lib/format-variant-name"
@@ -11,6 +11,7 @@ import { getProductDescription } from "lib/getProductDescription"
 import { ProductPageLayout } from "components/ProductPageLayout"
 import BreadCrumbs from "components/BreadCrumbs"
 import { storeConfig } from "config/storeConfig"
+import { useRouter } from "next/router"
 const VariantPicker = dynamic(() => import("../../components/VariantPicker"))
 
 const SkeletonLoader = dynamic(() => import("../../components/SkeletonLoader"))
@@ -31,6 +32,9 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
     setSelectedImage,
     images
   } = useProduct(product)
+
+  const hasMockupImages =
+    product.additional_images != null && product.additional_images.length > 0
 
   const hasMultipleImages = images.length > 1
   let description = getProductDescription(product.name)
@@ -182,23 +186,25 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
                   />
                 </div>
 
-                {hasMultipleImages && (
+                {/* {hasMockupImages && (
                   <div className="w-full flex items-center justify-center gap-1 mt-2">
-                    {images.map((image, index) => (
-                      <button
-                        key={image}
-                        className={`w-20 h-20 border-2 ${
-                          selectedImage === image
-                            ? "border-secondary"
-                            : "border-neutral-400"
-                        } relative aspect-square`}
-                        onClick={() => setSelectedImage(image)}
-                      >
-                        <Image src={image || ""} alt={product.name} fill />
-                      </button>
-                    ))}
+                    {product.additional_images.map((image, index) => {
+                      return (
+                        <button
+                          key={image}
+                          className={`w-20 h-20 border-2 ${
+                            selectedImage === image
+                              ? "border-secondary"
+                              : "border-neutral-400"
+                          } relative aspect-square`}
+                          onClick={() => setSelectedImage(image)}
+                        >
+                          <Image src={image} alt={product.name} fill />
+                        </button>
+                      )
+                    })}
                   </div>
-                )}
+                )} */}
               </div>
             </div>
 
@@ -217,9 +223,13 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
                   onChange={({ target: { value } }) =>
                     setActiveVariantExternalId(value)
                   }
+                  changeVariant={(externalId: string) =>
+                    setActiveVariantExternalId(externalId)
+                  }
                   className="py-4 !text-lg"
                   variants={product.variants}
                   disabled={product.variants.length === 1}
+                  activeVariant={activeVariant.name.split(" / ")[0]}
                 />
               </div>
 
@@ -259,6 +269,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       `sync/products?search=${encodedProductName}`
     )
 
+    const route = (context.resolvedUrl as string).split("/")[2]
+
     if (result.length < 1) {
       return {
         redirect: {
@@ -284,6 +296,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
           ...variant
         })
       )
+    }
+
+    const mockupsUrls = [
+      `${process.env.STORE_URL}/assets/mockups/${route}.png`,
+      `${process.env.STORE_URL}/assets/mockups/${route}-2.png`
+    ]
+    const additionalImages = []
+    const imageMockupsExist = async () => {
+      const response = await fetch(mockupsUrls[0])
+      return response.status === 200
+    }
+
+    if (await imageMockupsExist()) {
+      product.additional_images = mockupsUrls
     }
 
     return {

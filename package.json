@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "next": "latest",
     "printful-request": "^2.0.0",
     "react": "18.2.0",
