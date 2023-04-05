@@ -12,16 +12,63 @@ import { ProductPageLayout } from "components/ProductPageLayout"
 import BreadCrumbs from "components/BreadCrumbs"
 import { storeConfig } from "config/storeConfig"
 import { useRouter } from "next/router"
+import Link from "next/link"
+import { getProductBasePrice } from "lib/getProductBasePrice"
 const VariantPicker = dynamic(() => import("../../components/VariantPicker"))
 
 const SkeletonLoader = dynamic(() => import("../../components/SkeletonLoader"))
 
-type ProductPageProps = {
-  product: PrintfulProductFull
+const RelatedProducts = ({ products }: { products: PrintfulProductFull[] }) => {
+  return (
+    <div className="mt-10 bg-white border-8 border-black p-4 items-center justify-center">
+      <h2 className="text-2xl font-bold mb-4">Related Products</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {products.map((product) => {
+          const productType = getProductType(product.name)
+          const { thumbnail_url, name } = product
+          const price = getProductBasePrice(name)
+          const link = product.name.split(" ").join("-").toLowerCase()
+
+          return (
+            <Link
+              href={`/${productType}s/${link}`}
+              key={product.id}
+              className="flex flex-col items-center justify-center"
+            >
+              <div className="relative w-48 h-48">
+                <Image
+                  key={thumbnail_url}
+                  src={thumbnail_url}
+                  fill
+                  alt={product.name}
+                />
+              </div>
+              <h3 className="text-lg leading-none mt-1">{name}</h3>
+              <p className="text-xl mb-1">
+                <strong>${price}</strong>
+              </p>
+              <button className="lowercase border-4 border-black bg-primary text-black px-4 py-2">
+                View
+              </button>
+            </Link>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
-const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
+type ProductPageProps = {
+  product: PrintfulProductFull
+  relatedProducts: PrintfulProductFull[]
+}
+
+const ProductPagePage: React.FC<ProductPageProps> = ({
+  product,
+  relatedProducts
+}) => {
   const [imageLoaded, setImageLoaded] = useState(false)
+
   const {
     activeVariantExternalId,
     setActiveVariantExternalId,
@@ -45,7 +92,6 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
   const { featuredProducts } = storeConfig
 
   const featuredProduct = featuredProducts.find((featuredProduct) => {
-    // remove the word "aop" from the name
     const formattedProductName = product.name.replace("aop ", "")
     return featuredProduct.name === formattedProductName
   })
@@ -62,123 +108,16 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
       isFeatured={featuredProductExists}
     >
       <div className="text-center relative mb-10">
-        {/* <div className="absolute top-0 hidden md:block left-0 bg-black shadow-md w-full h-full -translate-x-[1rem] transition translate-y-[1rem] z-0" /> */}
         <div className="flex flex-col items-center justify-center relative p-0 md:p-4 z-10 bg-white shadow-md border-8 border-black">
           <BreadCrumbs className="mb-1 self-start" />
           <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center w-full">
-            {/* <div
-              className={`w-full flex flex-col md:flex-row ${
-                hasMultipleImages ? "justify-between" : "justify-center"
-              } items-center mb-4`}
-            > */}
-            {/* <button
-                className={`${
-                  hasMultipleImages ? "hidden md:block" : "hidden"
-                } fill-black hover:scale-[1.05] transition  ${
-                  selectedImage === images[0] ? "opacity-0" : "opacity-100"
-                }`}
-                onClick={() => setSelectedImage(images[0])}
-              >
-                <svg
-                  className="w-6 h-6 rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button> */}
-
-            {/* <button
-                className={`${
-                  hasMultipleImages ? "hidden md:block" : "hidden"
-                } fill-black hover:scale-[1.05] transition ${
-                  selectedImage === images[1] ? "opacity-0" : "opacity-100"
-                }`}
-                onClick={() => setSelectedImage(images[1])}
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button> */}
-
-            {/* <div className="flex items-center justify-center md:hidden pt-2">
-                <button
-                  className={`${
-                    hasMultipleImages ? "" : "hidden"
-                  } fill-white hover:scale-[1.05] transition md:hidden p-2 bg-black ${
-                    selectedImage === images[0]
-                      ? "opacity-0 hidden"
-                      : "opacity-100 block"
-                  }`}
-                  onClick={() => setSelectedImage(images[0])}
-                >
-                  <svg
-                    className="w-6 h-6 rotate-180"
-                    fill="none"
-                    stroke="white"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-                <button
-                  className={`${
-                    hasMultipleImages ? "" : "hidden"
-                  } fill-white hover:scale-[1.05] transition md:hidden p-2 bg-black ${
-                    selectedImage === images[1]
-                      ? "opacity-0 hidden"
-                      : "opacity-100 block"
-                  }`}
-                  onClick={() => setSelectedImage(images[1])}
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="white"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div> */}
-            {/* </div> */}
-
             <div className={`flex items-center justify-center`}>
               <div className="h-[20rem] w-[20rem] md:w-[45rem] md:h-[45rem] relative flex flex-col items-center justify-center">
                 <div className="w-full h-full grid place-items-center relative">
                   <SkeletonLoader show={!imageLoaded} type={productType} />
                   <Image
                     src={selectedImage || ""}
+                    key={product.id}
                     onLoadStart={() => setImageLoaded(false)}
                     onLoadingComplete={() => setImageLoaded(true)}
                     alt={product.name}
@@ -255,16 +194,35 @@ const ProductPagePage: React.FC<ProductPageProps> = ({ product }) => {
           </div>
         </div>
       </div>
+      <RelatedProducts products={relatedProducts} />
     </ProductPageLayout>
   )
 }
 
+const getRelatedProducts = async (category: string) => {
+  try {
+    const { result } = await printful.get(
+      `sync/products?search=${category
+        .split("-")
+        .join(" ")
+        .slice(0, -1)}&limit=12`
+    )
+    const randomProducts = result.sort(() => Math.random() - 0.5).slice(0, 3)
+    return randomProducts
+  } catch (e) {
+    console.log(e)
+    return []
+  }
+}
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const productName = context.params.productName as string
+  const category = context.params.category as string
   const cleanedUpProductName = productName.split("-").join(" ")
   const encodedProductName = encodeURIComponent(cleanedUpProductName as string)
 
   try {
+    // find product
     const { result } = await printful.get(
       `sync/products?search=${encodedProductName}`
     )
@@ -314,7 +272,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     return {
       props: {
-        product: product || {}
+        product: product || {},
+        relatedProducts: await getRelatedProducts(category)
       }
     }
   } catch (e) {

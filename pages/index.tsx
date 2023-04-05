@@ -11,9 +11,8 @@ import Link from "next/link"
 import SkeletonLoader from "components/SkeletonLoader"
 import Image from "next/image"
 import PrimaryLink from "components/PrimaryLink"
-import FeaturedCategories from "components/FeaturedCategories"
+// import FeaturedCategories from "components/FeaturedCategories"
 const Heading = dynamic(() => import("../components/Heading"), { ssr: false })
-const ProductGrid = dynamic(() => import("../components/ProductGrid"))
 
 const { featuredProducts } = storeConfig
 

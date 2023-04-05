@@ -3,58 +3,10 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
 import { getProductType } from "../lib/getProductType"
+import { getProductBasePrice } from "lib/getProductBasePrice"
 
 const SkeletonLoader = dynamic(() => import("./SkeletonLoader"))
 const PrimaryLink = dynamic(() => import("./PrimaryLink"))
-
-const BASE_PRICES = {
-  "sticker sheet": 8,
-  sticker: 5,
-  tee: 24,
-  "aop kids tee": 28,
-  "kids tee": 21,
-  "aop tee": 35,
-  "crop tee": 28,
-  "aop crop tee": 35,
-  tank: 22,
-  "aop tank": 32,
-  hoodie: 35,
-  "aop hoodie": 55,
-  sweatshirt: 35,
-  "aop sweatshirt": 50,
-  mug: 20,
-  "iphone case": 20,
-  "samsung case": 20,
-  apron: 33,
-  headband: 17,
-  backpack: 50,
-  drawstring: 25,
-  tote: 30,
-  "fanny pack": 35,
-  "laptop case": 30,
-  "crop sleeveless tee": 28,
-  tumbler: "28",
-  scrunchie: 15,
-  bandana: 17,
-  "gym bag": 60
-}
-
-const getProductBasePrice = (name: string) => {
-  const productType = getProductType(name)
-
-  if (
-    name === "crippling depression hoodie" ||
-    name === "crippling anxiety hoodie"
-  ) {
-    return 55
-  }
-
-  if (BASE_PRICES[productType]) {
-    return BASE_PRICES[productType]
-  }
-
-  return 24
-}
 
 const Product = (product) => {
   const { name, is_ignored } = product

@@ -35,7 +35,7 @@ const BreadCrumbs: React.FC<{ className?: string }> = ({ className = "" }) => {
             }`}
             title={subRoute as string}
           >
-            <strong>{subRoute}</strong>
+            <strong>{subRoute.split("-").join(" ")}</strong>
           </Link>
         </>
       )}
