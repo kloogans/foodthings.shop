@@ -25,7 +25,7 @@ const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
     return (
       <ul
         style={{ transition: "all 0.2s ease-in-out" }}
-        className={`relative items-center justify-center h-full flex lg:hidden text-black text-sm md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-black`}
+        className={`relative items-center justify-center min-h-screen flex lg:hidden text-black text-sm md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-black`}
       >
         {children}
         <li
