@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
       </header>
       <main
         style={{ minHeight: "calc(100vh - 180px)" }}
-        className={`py-6 pb-10 flex-auto relative px-2 bg-black lg:background-food ${
+        className={`py-6 pb-10 flex-auto relative px-2 bg-black background-food ${
           hideAnnouncement
             ? "mt-[6.5rem] lg:mt-[7rem]"
             : "mt-52 md:mt-[14rem] lg:mt-44"
