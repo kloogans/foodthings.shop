@@ -20,8 +20,8 @@ const Layout = ({ children }) => {
     <div className="bg-primary min-h-screen relative">
       <header
         style={{ transition: "all .2s ease-in-out" }}
-        className={`fixed top-0 left-0 w-full z-[100] bg-primary ${
-          hideAnnouncement ? "border-t-0" : "border-b-8 border-black"
+        className={`fixed top-0 left-0 w-full z-[100] bg-primary border-y-8 border-black ${
+          !hideAnnouncement ? "border-t-0" : ""
         }`}
       >
         <AnnouncementBanner
