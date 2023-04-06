@@ -1,6 +1,8 @@
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
 export const useProduct = (product) => {
+  const router = useRouter()
   const { variants, id } = product
 
   const [activeVariantExternalId, setActiveVariantExternalId] = useState(

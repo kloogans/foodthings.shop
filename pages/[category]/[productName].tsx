@@ -21,8 +21,10 @@ const SkeletonLoader = dynamic(() => import("../../components/SkeletonLoader"))
 const RelatedProducts = ({ products }: { products: PrintfulProductFull[] }) => {
   return (
     <div className="mt-10 bg-white border-8 border-black p-4 items-center justify-center">
-      <h2 className="text-2xl font-bold mb-4">Related Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <h2 className="text-2xl font-bold mb-4 w-full text-center lowercase">
+        Related Products
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((product) => {
           const productType = getProductType(product.name)
           const { thumbnail_url, name } = product
@@ -30,10 +32,11 @@ const RelatedProducts = ({ products }: { products: PrintfulProductFull[] }) => {
           const link = product.name.split(" ").join("-").toLowerCase()
 
           return (
-            <Link
-              href={`/${productType}s/${link}`}
+            <a
+              href={`/${productType.split(" ").join("-")}s/${link}`}
               key={product.id}
               className="flex flex-col items-center justify-center"
+              title={name}
             >
               <div className="relative w-48 h-48">
                 <Image
@@ -50,7 +53,7 @@ const RelatedProducts = ({ products }: { products: PrintfulProductFull[] }) => {
               <button className="lowercase border-4 border-black bg-primary text-black px-4 py-2">
                 View
               </button>
-            </Link>
+            </a>
           )
         })}
       </div>
@@ -207,7 +210,7 @@ const getRelatedProducts = async (category: string) => {
         .join(" ")
         .slice(0, -1)}&limit=12`
     )
-    const randomProducts = result.sort(() => Math.random() - 0.5).slice(0, 3)
+    const randomProducts = result.sort(() => Math.random() - 0.5).slice(0, 4)
     return randomProducts
   } catch (e) {
     console.log(e)
