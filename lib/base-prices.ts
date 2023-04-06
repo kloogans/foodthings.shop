@@ -1,8 +1,8 @@
 export const BASE_PRICES = {
+  "aop kids tee": 28,
   "sticker sheet": 8,
   sticker: 5,
   tee: 24,
-  "aop kids tee": 28,
   "kids tee": 21,
   "aop tee": 35,
   "crop tee": 28,
