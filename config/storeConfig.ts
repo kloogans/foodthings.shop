@@ -205,6 +205,18 @@ Whether you're hitting the gym or hanging out with friends, this crop top is sur
       link: "crop-tees/donuts-crop-tee",
       isFeatured: true,
       featuredBackground: "/assets/vectors/donuts.svg"
+    },
+    {
+      name: "broccoli sweatshirt",
+      description: `This crop top t-shirt is a sweet and sassy addition to any wardrobe. With a fun and playful design of delicious donuts printed all over it, this shirt is perfect for donut lovers who want to show off their playful side. Made from soft and breathable materials, it's also comfortable and stylish for any occasion. 
+        
+Whether you're hitting the gym or hanging out with friends, this crop top is sure to turn heads and make everyone crave a sweet treat.`,
+      productType: "sweatshirt",
+      price: 28,
+      image: "/assets/mockups/broccoli-sweatshirt-featured.png",
+      link: "sweatshirts/broccoli-sweatshirt",
+      isFeatured: true,
+      featuredBackground: "/assets/vectors/broccoli.svg"
     }
   ]
 } as StoreConfig

@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
             {/* logo */}
             <div className="ml-2 xl:ml-0 flex items-center max-h-[60px] md:max-h-[80px] self-center justify-start flex-auto lg:flex-0">
               <Link href="/" className="flex items-center text-black">
-                <span className="w-16 h-16 md:w-[6.5rem] md:h-[6.5rem] -translate-y-[1px] flex items-center justify-center relative">
+                <span className="w-16 h-16 md:w-[6rem] md:h-[6rem] lg:w-[6.5rem] lg:h-[6.5rem] -translate-y-[1px] flex items-center justify-center relative">
                   <Image src="/assets/logo.svg" alt="Logo" fill />
                 </span>
               </Link>
@@ -91,7 +91,9 @@ const Layout = ({ children }) => {
       <main
         style={{ minHeight: "calc(100vh - 180px)" }}
         className={`py-6 pb-10 flex-auto relative px-2 bg-black background-food ${
-          hideAnnouncement ? "mt-[6.5rem] lg:mt-[7rem]" : "mt-52 lg:mt-44"
+          hideAnnouncement
+            ? "mt-[6.5rem] lg:mt-[7rem]"
+            : "mt-52 md:mt-60 lg:mt-44"
         }`}
       >
         <div className="w-full max-w-[1540px] mx-auto">{children}</div>

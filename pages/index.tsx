@@ -47,7 +47,7 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
             ? `url(${featuredBackground}) repeat center`
             : "white"
         }}
-        className={`z-10 bg-white border-8 border-black bg-contain shadow-md grid place-items-center ${
+        className={`z-10 bg-white border-8 border-black bg-cover shadow-md grid place-items-center ${
           isFeatured ? "grid-cols-1 lg:grid-cols-2" : "grid-cols-1"
         }`}
       >
