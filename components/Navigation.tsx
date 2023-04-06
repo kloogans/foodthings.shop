@@ -20,7 +20,6 @@ const MENU_ITEMS = [
 ]
 
 const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
-  console.log(isMobile)
   if (isMobile) {
     return (
       <ul
