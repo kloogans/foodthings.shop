@@ -205,17 +205,34 @@ Whether you're hitting the gym or hanging out with friends, this crop top is sur
       link: "crop-tees/donuts-crop-tee",
       isFeatured: true,
       featuredBackground: "/assets/vectors/donuts.svg"
+    },
+    {
+      name: "broccoli sweatshirt",
+      productType: "sweatshirt",
+      description: `This sweatshirt is a fun and unique way to showcase your love for healthy eating. With a playful and quirky design of broccoli printed all over it, this sweatshirt is perfect for those who want to add a touch of humor to their wardrobe. Made from soft and cozy materials, it's also perfect for lounging around the house or running errands on a chilly day. 
+      
+Whether you're a lifelong veggie lover or just looking for a fun and comfortable sweatshirt, this broccoli-printed sweatshirt is sure to satisfy.`,
+      price: 50,
+      image: [
+        "/assets/mockups/broccoli-sweatshirt.png",
+        "/assets/mockups/broccoli-sweatshirt-2.png"
+      ],
+      link: "/aop-sweatshirts/broccoli-aop-sweatshirt",
+      isFeatured: false
+    },
+    {
+      name: "french fries drawstring bag",
+      productType: "bag",
+      description: `This drawstring bag is a fun and playful accessory for anyone who loves french fries! Featuring a whimsical print of golden and crispy fries all over it, this bag is perfect for carrying your gym clothes, books, or snacks on the go. 
+      
+Made from durable materials and with a secure drawstring closure, it's also great for travel and outdoor activities. Whether you're a fast food fanatic or just love the playful design, this french fry drawstring bag is sure to be a hit.`,
+      price: 25,
+      image: [
+        "/assets/mockups/french-fries-drawstring.png",
+        "/assets/mockups/french-fries-drawstring-2.png"
+      ],
+      link: "drawstrings/french-fries-drawstring-bag",
+      isFeatured: false
     }
-    //     {
-    //       name: "broccoli sweatshirt",
-    //       description: `This crop top t-shirt is a sweet and sassy addition to any wardrobe. With a fun and playful design of delicious donuts printed all over it, this shirt is perfect for donut lovers who want to show off their playful side. Made from soft and breathable materials, it's also comfortable and stylish for any occasion.
-
-    // Whether you're hitting the gym or hanging out with friends, this crop top is sure to turn heads and make everyone crave a sweet treat.`,
-    //       productType: "sweatshirt",
-    //       price: 50,
-    //       image: ["/assets/mockups/broccoli-sweatshirt-featured.png"],
-    //       link: "sweatshirts/broccoli-sweatshirt",
-    //       isFeatured: false,
-    //     }
   ]
 } as StoreConfig
