@@ -197,7 +197,7 @@ const ProductPagePage: React.FC<ProductPageProps> = ({
           </div>
         </div>
       </div>
-      <RelatedProducts products={relatedProducts} />
+      {/* <RelatedProducts products={relatedProducts} /> */}
     </ProductPageLayout>
   )
 }
