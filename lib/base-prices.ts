@@ -17,7 +17,7 @@ export const BASE_PRICES = {
   "iphone case": 20,
   "samsung case": 20,
   apron: 33,
-  headband: 17,
+  headband: 10,
   backpack: 50,
   drawstring: 25,
   tote: 30,
@@ -26,6 +26,6 @@ export const BASE_PRICES = {
   "crop sleeveless tee": 28,
   tumbler: "28",
   scrunchie: 15,
-  bandana: 17,
+  bandana: 13,
   "gym bag": 60
 }
