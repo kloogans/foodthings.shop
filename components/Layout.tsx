@@ -11,7 +11,7 @@ const Navigation = dynamic(() => import("./Navigation"), { ssr: false })
 const Layout = ({ children }) => {
   const { cart } = useSnipcartCount()
   const [showContact, setShowContact] = useState(false)
-  const [hideAnnouncement, setHideAnnouncement] = useState(false)
+  const [hideAnnouncement, setHideAnnouncement] = useState(true)
   const cartHasItems = cart.items.count !== 0
   const router = useRouter()
   const { pathname } = router
