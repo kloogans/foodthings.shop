@@ -117,7 +117,7 @@ export const storeConfig = {
         
 So whether you like them hot and spicy or mild and saucy, this chicken wing t-shirt is sure to make you and everyone around you hungry for more.`,
       productType: "tee",
-      price: 35,
+      price: 31,
       image: "/assets/mockups/chicken-wings-tee.png",
       link: "tees/chicken-wings-aop-tee",
       isFeatured: true,
@@ -129,7 +129,7 @@ So whether you like them hot and spicy or mild and saucy, this chicken wing t-sh
         
 Our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. `,
       productType: "hoodie",
-      price: 35,
+      price: 26,
       image: [
         "/assets/mockups/banana-hoodie.png",
         "/assets/mockups/banana-hoodie-2.png"
@@ -144,7 +144,7 @@ Our unisex hoodie is a soft and comfortable option with a front pouch pocket, ma
         
 Our bags are made of 100% spun polyester fabric and it has a capacity of 2.6 US gallons.`,
       productType: "bag",
-      price: 30,
+      price: 22,
       image: [
         "/assets/mockups/donuts-tote-1.png",
         "/assets/mockups/donuts-tote-2.png"
@@ -158,7 +158,7 @@ Our bags are made of 100% spun polyester fabric and it has a capacity of 2.6 US 
         
 The adjustable waist strap ensures a comfortable and secure fit, while the multiple compartments provide ample space for your phone, wallet, keys, and more. Perfect for travel, concerts, or any hands-free activity where you want to keep your valuables close and your love for pizza on display.`,
       productType: "bag",
-      price: 35,
+      price: 29,
       image: "/assets/mockups/pizza-fanny-pack-feature.png",
       link: "fanny-packs/pizza-fanny-pack-bag",
       isFeatured: true,
@@ -171,7 +171,7 @@ The adjustable waist strap ensures a comfortable and secure fit, while the multi
         
 Made from soft and comfortable materials, it's also a comfy and trendy way to show off your sarcastic sense of humor. Wear it to your next social gathering and watch as your friends either laugh or get a little worried!`,
       productType: "tee",
-      price: 24,
+      price: 16,
       image: [
         "/assets/mockups/crippling-anxiety-tee-1.png",
         "/assets/mockups/crippling-anxiety-tee-2.png"
@@ -185,7 +185,7 @@ Made from soft and comfortable materials, it's also a comfy and trendy way to sh
         
 Whether you're sipping on green tea or a refreshing smoothie, this tumbler cup is sure to add a touch of fun and whimsy to your daily routine.`,
       productType: "tumbler",
-      price: 28,
+      price: 24,
       image: [
         "/assets/mockups/broccoli-tumbler-1.png",
         "/assets/mockups/broccoli-tumbler-2.png"
@@ -200,7 +200,7 @@ Whether you're sipping on green tea or a refreshing smoothie, this tumbler cup i
         
 Whether you're hitting the gym or hanging out with friends, this crop top is sure to turn heads and make everyone crave a sweet treat.`,
       productType: "crop-tee",
-      price: 28,
+      price: 25,
       image: "/assets/mockups/donuts-crop-tee-feature.png",
       link: "crop-tees/donuts-crop-tee",
       isFeatured: true,
@@ -212,7 +212,7 @@ Whether you're hitting the gym or hanging out with friends, this crop top is sur
       description: `This sweatshirt is a fun and unique way to showcase your love for healthy eating. With a playful and quirky design of broccoli printed all over it, this sweatshirt is perfect for those who want to add a touch of humor to their wardrobe. Made from soft and cozy materials, it's also perfect for lounging around the house or running errands on a chilly day. 
       
 Whether you're a lifelong veggie lover or just looking for a fun and comfortable sweatshirt, this broccoli-printed sweatshirt is sure to satisfy.`,
-      price: 50,
+      price: 42,
       image: [
         "/assets/mockups/broccoli-sweatshirt.png",
         "/assets/mockups/broccoli-sweatshirt-2.png"
@@ -226,7 +226,7 @@ Whether you're a lifelong veggie lover or just looking for a fun and comfortable
       description: `This drawstring bag is a fun and playful accessory for anyone who loves french fries! Featuring a whimsical print of golden and crispy fries all over it, this bag is perfect for carrying your gym clothes, books, or snacks on the go. 
       
 Made from durable materials and with a secure drawstring closure, it's also great for travel and outdoor activities. Whether you're a fast food fanatic or just love the playful design, this french fry drawstring bag is sure to be a hit.`,
-      price: 25,
+      price: 20,
       image: [
         "/assets/mockups/french-fries-drawstring.png",
         "/assets/mockups/french-fries-drawstring-2.png"
