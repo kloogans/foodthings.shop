@@ -24,11 +24,11 @@ export const BASE_PRICES = {
   drawstring: 20,
   "aop tote": 28,
   tote: 22,
-  "fanny pack": 35,
+  "fanny pack": 29,
   "laptop case": 30,
   "crop sleeveless tee": 28,
-  tumbler: "28",
-  scrunchie: 15,
+  tumbler: "24",
+  scrunchie: 11,
   bandana: 13,
-  "gym bag": 60
+  "gym bag": 50
 }
