@@ -16,7 +16,7 @@ const MENU_ITEMS = [
   // "tanks",
   ["bags", "totes", "fanny packs", "backpacks", "drawstrings", "gym bags"],
   ["kitchen", "mugs", "tumblers", "aprons"],
-  ["accessories", "headbands", "scrunchies", "bandanas", "stickers"]
+  ["accessories", "headbands", "scrunchies", "bandanas"]
 ]
 
 const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
