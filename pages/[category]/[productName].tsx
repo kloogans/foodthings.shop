@@ -78,19 +78,11 @@ const ProductPagePage: React.FC<ProductPageProps> = ({
     activeVariant,
     activeVariantFile,
     formattedPrice,
-    selectedImage,
-    setSelectedImage,
-    images
+    selectedImage
   } = useProduct(product)
 
-  const hasMockupImages =
-    product.additional_images != null && product.additional_images.length > 0
-
-  const hasMultipleImages = images.length > 1
   let description = getProductDescription(product.name)
   const productType = getProductType(product.name)
-  // @ts-ignore
-  const isSquare = productType !== "sticker" && productType !== "mug"
 
   const { featuredProducts } = storeConfig
 
@@ -127,26 +119,6 @@ const ProductPagePage: React.FC<ProductPageProps> = ({
                     fill
                   />
                 </div>
-
-                {/* {hasMockupImages && (
-                  <div className="w-full flex items-center justify-center gap-1 mt-2">
-                    {product.additional_images.map((image, index) => {
-                      return (
-                        <button
-                          key={image}
-                          className={`w-20 h-20 border-2 ${
-                            selectedImage === image
-                              ? "border-secondary"
-                              : "border-neutral-400"
-                          } relative aspect-square`}
-                          onClick={() => setSelectedImage(image)}
-                        >
-                          <Image src={image} alt={product.name} fill />
-                        </button>
-                      )
-                    })}
-                  </div>
-                )} */}
               </div>
             </div>
 
