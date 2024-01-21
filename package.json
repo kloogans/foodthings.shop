@@ -6,11 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "eslint-config-next": "^14.0.3",
     "fs": "^0.0.1-security",
-    "next": "latest",
+    "next": "^13.1.6",
     "printful-request": "^2.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-flip-numbers": "^3.0.7"
   },
   "devDependencies": {

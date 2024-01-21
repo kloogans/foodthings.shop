@@ -11,7 +11,6 @@ import Link from "next/link"
 import SkeletonLoader from "components/SkeletonLoader"
 import Image from "next/image"
 import PrimaryLink from "components/PrimaryLink"
-// import FeaturedCategories from "components/FeaturedCategories"
 const Heading = dynamic(() => import("../components/Heading"), { ssr: false })
 
 const { featuredProducts } = storeConfig
@@ -99,7 +98,6 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
                       fill
                       alt={`${name}`}
                       title={`${name}`}
-                      // onLoadingComplete={() => setImageLoaded(true)}
                     />
                   </div>
                 </>
