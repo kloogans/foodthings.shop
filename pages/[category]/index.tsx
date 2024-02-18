@@ -21,13 +21,11 @@ const CategoryPage: React.FC<ProductPageProps> = ({ products }) => {
       isCategoryPage
       isFeatured={false}
     >
-      <ProductGrid products={currentProducts} />
+      <ProductGrid products={products} />
       <div id="loadMore" />
     </ProductPageLayout>
   )
 }
-
-const accessories = ["sticker", "apron"]
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let { category } = context.query

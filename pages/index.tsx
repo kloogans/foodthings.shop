@@ -28,11 +28,10 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
     featuredBackground
   } = product
 
-  const firstTwoSentencesOfDescription =
-    description
-      .split(/\.|\?|\!/)
-      .slice(0, 2)
-      .join(".") + "."
+  const firstTwoSentencesOfDescription = description
+    .split(/(\.|\!)/)
+    .slice(0, 4)
+    .join("")
 
   return (
     <article

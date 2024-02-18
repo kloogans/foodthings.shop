@@ -32,7 +32,7 @@ interface StoreConfig {
 export const storeConfig = {
   storeName: "Food Things",
   supportEmail: "support@foodthings.shop",
-  twitterHandle: "@fuckedupfoods",
+  twitterHandle: "@",
   description:
     "We offer a wide variety of food-themed clothing and accessories that are perfect for any foodie. From graphic tees to aprons, hoodies, bags, and even stickers, we have everything you need to express your passion for good, bad, and weird eats. Browse our collection and add some flavor to your wardrobe with Food Things.",
   logo: "/assets/logo.svg",
@@ -117,7 +117,7 @@ export const storeConfig = {
         
 So whether you like them hot and spicy or mild and saucy, this chicken wing t-shirt is sure to make you and everyone around you hungry for more.`,
       productType: "tee",
-      price: 31,
+      price: 35,
       image: "/assets/mockups/chicken-wings-tee.png",
       link: "tees/chicken-wings-aop-tee",
       isFeatured: true,
@@ -129,7 +129,7 @@ So whether you like them hot and spicy or mild and saucy, this chicken wing t-sh
         
 Our unisex hoodie is a soft and comfortable option with a front pouch pocket, matching flat drawstrings, and a tear-away tag. `,
       productType: "hoodie",
-      price: 26,
+      price: 35,
       image: [
         "/assets/mockups/banana-hoodie.png",
         "/assets/mockups/banana-hoodie-2.png"
@@ -144,7 +144,7 @@ Our unisex hoodie is a soft and comfortable option with a front pouch pocket, ma
         
 Our bags are made of 100% spun polyester fabric and it has a capacity of 2.6 US gallons.`,
       productType: "bag",
-      price: 22,
+      price: 25,
       image: [
         "/assets/mockups/donuts-tote-1.png",
         "/assets/mockups/donuts-tote-2.png"
@@ -158,7 +158,7 @@ Our bags are made of 100% spun polyester fabric and it has a capacity of 2.6 US 
         
 The adjustable waist strap ensures a comfortable and secure fit, while the multiple compartments provide ample space for your phone, wallet, keys, and more. Perfect for travel, concerts, or any hands-free activity where you want to keep your valuables close and your love for pizza on display.`,
       productType: "bag",
-      price: 29,
+      price: 30,
       image: "/assets/mockups/pizza-fanny-pack-feature.png",
       link: "fanny-packs/pizza-fanny-pack-bag",
       isFeatured: true,
@@ -166,26 +166,26 @@ The adjustable waist strap ensures a comfortable and secure fit, while the multi
     },
 
     {
-      name: "crippling anxiety tee",
-      description: `This t-shirt is a hilarious way to let everyone know you're a little high-strung. Featuring the words "crippling anxiety" printed on it, this shirt is perfect for those who love to joke about their stress levels.
-        
-Made from soft and comfortable materials, it's also a comfy and trendy way to show off your sarcastic sense of humor. Wear it to your next social gathering and watch as your friends either laugh or get a little worried!`,
-      productType: "tee",
-      price: 16,
+      name: "breakfast leggings",
+      description: `Our delicious leggings are a fun and playful way to show off your love for breakfast! Featuring a unique and quirky design of delicious breakfast foods printed all over them, these leggings are perfect for anyone who wants to add a touch of whimsy to their wardrobe. 
+      
+      Made from soft and stretchy materials, they're also comfortable and stylish for any occasion!`,
+      productType: "leggings",
+      price: 37,
       image: [
-        "/assets/mockups/crippling-anxiety-tee-1.png",
-        "/assets/mockups/crippling-anxiety-tee-2.png"
+        "/assets/mockups/breakfast-leggings.jpg",
+        "/assets/mockups/breakfast-leggings-2.jpg"
       ],
-      link: "tees/crippling-anxiety-orange-tee",
+      link: "leggings/breakfast-leggings",
       isFeatured: false
     },
     {
       name: "broccoli tumbler",
-      description: `This tumbler cup is a fun and playful way to show off your love for healthy eating. Featuring a unique and quirky design of broccoli printed all over it, this cup is perfect for carrying your favorite hot or cold beverage on the go. Made from high-quality materials, it's also durable and easy to clean. 
+      description: `The broccoli tumbler is a fun and playful way to show off your love for healthy eating. Featuring a unique and quirky design of broccoli printed all over it, this cup is perfect for carrying your favorite hot or cold beverage on the go. Made from high-quality materials, it's also durable and easy to clean. 
         
-Whether you're sipping on green tea or a refreshing smoothie, this tumbler cup is sure to add a touch of fun and whimsy to your daily routine.`,
+Whether you're sipping on green tea or a refreshing smoothie, our broccoli tumbler is sure to add a touch of fun and whimsy to your daily routine.`,
       productType: "tumbler",
-      price: 24,
+      price: 25,
       image: [
         "/assets/mockups/broccoli-tumbler-1.png",
         "/assets/mockups/broccoli-tumbler-2.png"
@@ -200,7 +200,7 @@ Whether you're sipping on green tea or a refreshing smoothie, this tumbler cup i
         
 Whether you're hitting the gym or hanging out with friends, this crop top is sure to turn heads and make everyone crave a sweet treat.`,
       productType: "crop-tee",
-      price: 25,
+      price: 30,
       image: "/assets/mockups/donuts-crop-tee-feature.png",
       link: "crop-tees/donuts-crop-tee",
       isFeatured: true,
@@ -212,7 +212,7 @@ Whether you're hitting the gym or hanging out with friends, this crop top is sur
       description: `This sweatshirt is a fun and unique way to showcase your love for healthy eating. With a playful and quirky design of broccoli printed all over it, this sweatshirt is perfect for those who want to add a touch of humor to their wardrobe. Made from soft and cozy materials, it's also perfect for lounging around the house or running errands on a chilly day. 
       
 Whether you're a lifelong veggie lover or just looking for a fun and comfortable sweatshirt, this broccoli-printed sweatshirt is sure to satisfy.`,
-      price: 42,
+      price: 47,
       image: [
         "/assets/mockups/broccoli-sweatshirt.png",
         "/assets/mockups/broccoli-sweatshirt-2.png"
@@ -221,17 +221,17 @@ Whether you're a lifelong veggie lover or just looking for a fun and comfortable
       isFeatured: false
     },
     {
-      name: "french fries drawstring bag",
-      productType: "bag",
-      description: `This drawstring bag is a fun and playful accessory for anyone who loves french fries! Featuring a whimsical print of golden and crispy fries all over it, this bag is perfect for carrying your gym clothes, books, or snacks on the go. 
+      name: "french fries sports bra",
+      productType: "sports-bra",
+      description: `The french fries sports bra is a fun and playful way to show off your love for fries. With a unique and quirky design of delicious fries printed all over it, this sports bra is perfect for anyone who wants to add a touch of whimsy to their workout wardrobe. 
       
-Made from durable materials and with a secure drawstring closure, it's also great for travel and outdoor activities. Whether you're a fast food fanatic or just love the playful design, this french fry drawstring bag is sure to be a hit.`,
-      price: 20,
+      Made from soft and stretchy materials, it's also comfortable and supportive for any activity.`,
+      price: 32,
       image: [
-        "/assets/mockups/french-fries-drawstring.png",
-        "/assets/mockups/french-fries-drawstring-2.png"
+        "/assets/mockups/fries-sports-bra.jpg",
+        "/assets/mockups/fries-sports-bra-2.jpg"
       ],
-      link: "drawstrings/french-fries-drawstring-bag",
+      link: "sports-bras/french-fries-sports-bra",
       isFeatured: false
     }
   ]

@@ -1,6 +1,7 @@
 export const getProductType = (name: string) => {
   if (name.includes("aop kids tee")) return "aop kids tee"
   if (name.includes("kids tee")) return "kids tee"
+  if (name.includes("sports bra")) return "sports bra"
   if (name.includes("aop crop tee")) return "aop crop tee"
   if (name.includes("crop tee")) return "crop tee"
   if (name.includes("sticker sheet")) return "sticker sheet"

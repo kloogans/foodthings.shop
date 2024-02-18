@@ -21,14 +21,14 @@ const ProductGrid = ({ products }) => {
           showFeaturedCategories && isHome ? "" : "hidden"
         }`}
       >
-        {isHome && (
+        {/* {isHome && (
           <FeaturedCategories
             products={storeConfig.featuredCategories}
             setShowFeaturedProducts={setShowFeaturedCategories}
           />
-        )}
+        )} */}
       </div>
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full pb-4">
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full pt-4 md:pt-8 lg:pt-0 pb-4">
         {products.map((product) => (
           <Product key={product.id} {...product} />
         ))}

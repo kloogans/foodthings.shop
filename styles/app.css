@@ -347,11 +347,11 @@ button {
   background-position: fixed;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .background-food {
     background-image: none;
   }
-}
+} */
 
 .number-flipper section span {
   position: relative;

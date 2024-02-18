@@ -84,6 +84,7 @@ const Layout = ({ children }) => {
             </div>
           </div>
         </div>
+        {/* mobile nav */}
         <div className="w-full lg:hidden">
           <Navigation />
         </div>
@@ -119,33 +120,11 @@ const Layout = ({ children }) => {
                 contact us
               </button>
             )}
-            <a
-              href="https://twitter.com/fuckedupfoods"
-              title="@fuckedupfoods"
-              className="text-black font-bold hover:text-secondary transition mb-2 lg:mb-1"
-            >
-              fucked up foods on twitter
-            </a>
-
-            <a
-              href="https://twitter.com/fuckedupcars"
-              title="@fuckedupcars"
-              className="text-black font-bold hover:text-secondary transition mb-2 lg:mb-1"
-            >
-              fucked up cars on twitter
-            </a>
-            <a
-              href="https://twitter.com/fuckeduppcs"
-              title="@fuckeduppcs"
-              className="text-black font-bold hover:text-secondary transition mb-2 lg:mb-1"
-            >
-              fucked up pcs on twitter
-            </a>
             <Link
               href="/terms-of-sale"
               className="text-black font-bold hover:text-secondary transition mb-2 lg:mb-1"
             >
-              terms of use
+              terms of sale
             </Link>
           </nav>
           <p className="text-black text-sm">

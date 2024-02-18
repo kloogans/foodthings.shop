@@ -3,41 +3,33 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 
 const MENU_ITEMS = [
-  // "home",
   [
     "clothing",
     "tees",
-    "tanks",
     "crop tees",
-    "sweatshirts",
+    "sports bras",
+    "leggings",
     "hoodies",
-    "kids tees"
+    "sweatshirts"
   ],
-  // "tanks",
-  ["bags", "totes", "fanny packs", "backpacks", "drawstrings", "gym bags"],
-  ["kitchen", "mugs", "tumblers", "aprons"],
-  ["accessories", "headbands", "scrunchies", "bandanas"]
+  ["bags", "totes", "fanny packs", "drawstrings"],
+  ["accessories", "tumblers", "headbands", "scrunchies"]
 ]
 
-const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
+const NavMenuWrapper = ({ children, setShow, isMobile }) => {
   if (isMobile) {
     return (
       <ul
         style={{ transition: "all 0.2s ease-in-out" }}
-        className={`relative items-center justify-center min-h-screen flex lg:hidden text-black text-sm md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-black`}
+        className={`relative [&>*:nth-child(2)]:border-t-0 grid grid-cols-1 min-h-[100svh] lg:hidden text-black text-md md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-zinc-900 odd:bg-zinc-900`}
       >
-        {children}
-        <li
+        <button
           onClick={() => setShow(false)}
-          className="peer w-full max-w-[10rem]"
+          className="absolute top-0 right-0 p-4 bg-secondary text-white select-none font-bold"
         >
-          <button
-            onClick={() => setShow(false)}
-            className="w-full bg-secondary py-4 text-white select-none font-bold"
-          >
-            close
-          </button>
-        </li>
+          close
+        </button>
+        {children}
       </ul>
     )
   }
@@ -45,7 +37,7 @@ const NavMenuWrapper = ({ children, show, setShow, isMobile }) => {
   return (
     <ul
       style={{ transition: "all 0.2s ease-in-out" }}
-      className={`items-center place-items-center grid grid-cols-2 md:grid-cols-4 text-black text-sm md:text-lg flex-wrap overflow-y-hidden z-20 w-full lg:flex-auto lg:border-8 lg:border-secondary child:bg-black opacity-100`}
+      className={`items-center place-items-center grid grid-cols-3 text-black text-md md:text-lg flex-wrap overflow-y-hidden z-20 w-full lg:flex-auto lg:border-8 lg:border-secondary child:bg-black opacity-100`}
     >
       {children}
     </ul>
@@ -61,20 +53,19 @@ const SubMenu = ({ items }: { items: string[] }) => {
     <>
       <li
         onClick={() => setShow(!show)}
-        className="peer md:min-w-[118px] lg:h-full py-6 lg:py-4 grid place-items-center text-center w-1/2 md:w-full group text-white lg:hover:bg-rose-600 lg:focus:bg-rose-600 select-none"
+        className="peer border-t-2 lg:border-t-0 border-zinc-500 !bg-zinc-900 lg:bg-transparent md:min-w-[118px] h-full py-6 lg:py-4 grid place-items-center text-center w-full group text-white lg:hover:bg-rose-600 lg:focus:bg-rose-600 select-none"
       >
         {items[0]}
         <ul
           className={`absolute overflow-x-hidden top-0 lg:top-full -translate-y-[8px] left-0 w-full h-full lg:min-h-[20rem] bg-black -translate-x-full lg:translate-x-0 lg:border-8 lg:border-secondary lg:border-t-4 ${
             show ? "translate-x-0" : ""
-          } grid lg:hidden hover:grid lg:group-hover:grid grid-cols-2 lg:grid-cols-3 transition z-50`}
+          } grid lg:hidden [&>*:nth-child(2)]:border-t-0 hover:grid lg:group-hover:grid grid-cols-1 lg:grid-cols-3 transition z-50 odd:bg-zinc-900 pt-[5rem] lg:pt-0`}
         >
           {/* back button */}
           <button
             onClick={() => setShow(false)}
-            className={`flex items-center justify-center col-span-2 gap-1 py-2 text-white transition lg:hidden md:text-lg`}
+            className={`absolute left-0 top-0 pt-8 pl-8 flex items-center justify-center col-span-2 gap-1 text-white transition lg:hidden md:text-lg`}
           >
-            {/* left arrow svg icon */}
             <svg
               className="w-3 h-3 text-white"
               fill="none"
@@ -98,16 +89,16 @@ const SubMenu = ({ items }: { items: string[] }) => {
               return (
                 <li
                   key={subItem}
-                  className={`md:min-w-[118px] text-center w-full group text-white ${
+                  className={`md:min-w-[118px] text-center w-full border-t-2 border-zinc-700  lg:border-t-0 group text-white first:mt-8 md:first:mt-0 ${
                     isOdd ? "lg:last:col-span-1" : ""
                   }`}
                 >
                   <Link
                     href={`/${formattedName}`}
                     onClick={() => setShow(false)}
-                    className={`w-full h-full flex items-center justify-center leading-none shadow-md transition text-center select-none text-white md:text-lg ${
+                    className={`w-full h-full flex items-center justify-center leading-none shadow-md transition text-center select-none text-white text-md md:text-lg ${
                       router.asPath === `/${subItem}`
-                        ? "lg:bg-neutral-900 font-bold"
+                        ? "bg-zinc-800 !text-primary md:text-white font-bold"
                         : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
                     }
                       `}
@@ -135,14 +126,21 @@ export const NavMenu = ({ show = true, setShowMenu }) => {
     router.events.on("routeChangeStart", handleRouteChange)
   }, [])
 
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [show])
+
   const oddAmountOfMenuItems = MENU_ITEMS.length % 2 !== 0
 
   return (
-    <NavMenuWrapper
-      show={show}
-      isMobile={window.innerWidth < 821}
-      setShow={setShowMenu}
-    >
+    <NavMenuWrapper isMobile={window.innerWidth < 821} setShow={setShowMenu}>
       {MENU_ITEMS.map((item) => {
         if (typeof item === "object") {
           return <SubMenu key={item[0]} items={item} />
@@ -156,7 +154,7 @@ export const NavMenu = ({ show = true, setShowMenu }) => {
           >
             <Link
               href={`/${item === "home" ? "" : item + "s"}`}
-              className={`w-full h-full py-6 lg:py-4 flex items-center justify-center leading-none shadow-md transition text-center md:text-lg text-white ${
+              className={`w-full h-full py-6 lg:py-4 flex items-center justify-center leading-none shadow-md transition text-center text-md md:text-lg text-white ${
                 router.asPath === `/${item}`
                   ? "lg:bg-neutral-900 font-bold"
                   : " lg:hover:bg-rose-600 lg:focus:bg-rose-600"
@@ -199,12 +197,12 @@ const Navigation = () => {
 
         <div
           style={{ transition: "all 0.2s ease" }}
-          className={`bg-black w-full z-30 lg:hidden`}
+          className={`bg-zinc-800 border-b-primary border-b-4 w-full z-30 lg:hidden`}
         >
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className={`mx-auto w-full md:max-w-[5rem] flex items-center justify-center gap-1 transition h-2 py-6 text-white text-sm md:text-lg z-20 ${
-              showMenu ? "bg-neutral-800" : ""
+            className={`mx-auto w-full md:max-w-[5rem] flex items-center justify-center gap-1 transition h-2 py-6 text-white text-md md:text-lg z-20 ${
+              showMenu ? "bg-zinc-800" : ""
             }`}
           >
             {showMenu ? (
