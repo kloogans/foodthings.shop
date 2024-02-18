@@ -53,7 +53,7 @@ const SubMenu = ({ items }: { items: string[] }) => {
     <>
       <li
         onClick={() => setShow(!show)}
-        className="peer border-t-2 lg:border-t-0 border-zinc-500 !bg-zinc-900 lg:bg-transparent md:min-w-[118px] h-full py-6 lg:py-4 grid place-items-center text-center w-full group text-white lg:hover:bg-rose-600 lg:focus:bg-rose-600 select-none"
+        className="peer border-t-2 lg:border-t-0 border-zinc-500 !bg-zinc-900 lg:bg-transparent md:min-w-[118px] h-full py-6 lg:py-4 grid place-items-center text-center w-full group text-white lg:hover:!bg-rose-600 lg:focus:bg-rose-600 select-none"
       >
         {items[0]}
         <ul
