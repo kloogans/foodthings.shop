@@ -217,7 +217,7 @@ Whether you're a lifelong veggie lover or just looking for a fun and comfortable
         "/assets/mockups/broccoli-sweatshirt.png",
         "/assets/mockups/broccoli-sweatshirt-2.png"
       ],
-      link: "sweatshirts/broccoli-sweatshirt",
+      link: "aop-sweatshirts/broccoli-aop-sweatshirt",
       isFeatured: false
     },
     {
