@@ -17,27 +17,27 @@ const MENU_ITEMS = [
 ]
 
 const NavMenuWrapper = ({ children, setShow, isMobile }) => {
-  if (isMobile) {
-    return (
-      <ul
-        style={{ transition: "all 0.2s ease-in-out" }}
-        className={`relative [&>*:nth-child(2)]:border-t-0 grid grid-cols-1 min-h-[100svh] lg:hidden text-black text-md md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-zinc-900 odd:bg-zinc-900`}
-      >
-        <button
-          onClick={() => setShow(false)}
-          className="absolute top-0 right-0 p-4 bg-secondary text-white select-none font-bold"
-        >
-          close
-        </button>
-        {children}
-      </ul>
-    )
-  }
+  // if (isMobile) {
+  //   return (
+  //     <ul
+  //       style={{ transition: "all 0.2s ease-in-out" }}
+  //       className={`relative [&>*:nth-child(2)]:border-t-0 grid grid-cols-1 min-h-[100svh] lg:hidden text-black text-md md:text-lg flex-wrap w-full border-0 md:border-8 border-black border-b-0 child:bg-zinc-900 odd:bg-zinc-900`}
+  //     >
+  //       <button
+  //         onClick={() => setShow(false)}
+  //         className="absolute top-0 right-0 p-4 bg-secondary text-white select-none font-bold"
+  //       >
+  //         close
+  //       </button>
+  //       {children}
+  //     </ul>
+  //   )
+  // }
 
   return (
     <ul
       style={{ transition: "all 0.2s ease-in-out" }}
-      className={`items-center place-items-center grid grid-cols-3 text-black text-md md:text-lg flex-wrap overflow-y-hidden z-20 w-full lg:flex-auto lg:border-8 lg:border-secondary child:bg-black opacity-100`}
+      className={`items-center place-items-center grid grid-cols-3 text-black text-md md:text-lg flex-wrap overflow-y-hidden z-20 w-full lg:flex-auto lg:border-8 lg:border-secondary child:bg-black opacity-100 shadow-md`}
     >
       {children}
     </ul>

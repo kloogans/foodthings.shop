@@ -107,7 +107,7 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
         <div
           className={`${
             isFeatured
-              ? "bg-white p-4 w-full max-w-lg border-t-8 lg:border-8 border-black shadow-md"
+              ? "bg-white p-4 w-full max-w-lg border-t-8 md:border-8 md:border-b-0 lg:border-b-8 border-black shadow-lg"
               : "w-full"
           }`}
         >
