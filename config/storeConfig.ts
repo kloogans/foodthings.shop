@@ -19,6 +19,7 @@ export interface FeaturedCategory {
 
 interface StoreConfig {
   storeName: string
+  tagLine: string
   supportEmail: string
   description: string
   twitterHandle: string
@@ -31,6 +32,7 @@ interface StoreConfig {
 
 export const storeConfig = {
   storeName: "Food Things",
+  tagLine: "Delicious Food-themed Clothing and Accessories",
   supportEmail: "support@foodthings.shop",
   twitterHandle: "@",
   description:

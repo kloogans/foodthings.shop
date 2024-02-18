@@ -2,10 +2,10 @@ import Head from "next/head"
 import Script from "next/script"
 import { storeConfig } from "config/storeConfig"
 
-const { storeName, description, seoImage, storeUrl } = storeConfig
+const { storeName, tagLine, description, seoImage, storeUrl } = storeConfig
 
 const DEFAULT_DESCRIPTION = description
-const DEFAULT_TITLE = storeName
+const DEFAULT_TITLE = `${storeName} | ${tagLine}`
 const DEFAULT_IMAGE = seoImage
 const DEFAULT_URL = storeUrl
 
