@@ -212,7 +212,7 @@ Whether you're hitting the gym or hanging out with friends, this crop top is sur
       description: `This sweatshirt is a fun and unique way to showcase your love for healthy eating. With a playful and quirky design of broccoli printed all over it, this sweatshirt is perfect for those who want to add a touch of humor to their wardrobe. Made from soft and cozy materials, it's also perfect for lounging around the house or running errands on a chilly day. 
       
 Whether you're a lifelong veggie lover or just looking for a fun and comfortable sweatshirt, this broccoli-printed sweatshirt is sure to satisfy.`,
-      price: 47,
+      price: 45,
       image: [
         "/assets/mockups/broccoli-sweatshirt.png",
         "/assets/mockups/broccoli-sweatshirt-2.png"
