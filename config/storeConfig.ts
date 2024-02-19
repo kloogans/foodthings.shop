@@ -33,7 +33,7 @@ interface StoreConfig {
 export const storeConfig = {
   storeName: "Food Things",
   tagLine: "Delicious Food-themed Clothing and Accessories",
-  supportEmail: "support@foodthings.shop",
+  supportEmail: "support@foodthings.net",
   twitterHandle: "@",
   description:
     "We offer a wide variety of food-themed clothing and accessories that are perfect for any foodie. From graphic tees to aprons, hoodies, bags, and even stickers, we have everything you need to express your passion for good, bad, and weird eats. Browse our collection and add some flavor to your wardrobe with Food Things.",

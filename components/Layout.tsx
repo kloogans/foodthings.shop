@@ -144,11 +144,11 @@ const Layout = ({ children }) => {
 
             {showContact ? (
               <a
-                href="mailto:support@foodthings.shop"
-                title="support@foodthings.shop"
+                href="mailto:support@foodthings.net"
+                title="support@foodthings.net"
                 className="text-black font-bold hover:text-secondary transition mb-2 lg:mb-1"
               >
-                support@foodthings.shop
+                support@foodthings.net
               </a>
             ) : (
               <button
@@ -166,7 +166,7 @@ const Layout = ({ children }) => {
             </Link>
           </nav>
           <p className="text-black text-sm">
-            &copy; {new Date().getFullYear()} web things llc
+            &copy; {new Date().getFullYear()} food things
           </p>
         </div>
       </footer>

@@ -35,38 +35,34 @@ const MobileMenu = ({
     }
   }
 
-  const closeSubMenu = () => {
-    setCurrentSubmenuOpen(null)
-  }
   return (
     <div
-      className="fixed right-0 top-0 w-full max-w-md min-h-[100svh] flex flex-col items-center justify-start pt-[3.5rem] bg-black md:border-l-4 border-primary z-50 transform transition duration-300 ease-in-out"
+      className="fixed right-0 top-0 w-full max-w-md h-full overflow-y-auto flex flex-col items-center justify-start bg-black md:border-l-4 border-primary z-50 transform transition duration-300 ease-in-out"
       style={{ transform: showMenu ? "translateX(0)" : "translateX(100%)" }}
     >
-      <button
-        onClick={close}
-        className="absolute top-0 right-0 p-4 text-white select-none font-bold"
-      >
-        {/* x svg icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+      <div className="fixed top-0 left-0 bg-black w-full flex items-center justify-between z-[9999]">
+        <p className="text-zinc-400 text-sm font-bold p-4">menu</p>
+        <button
+          onClick={close}
+          className="p-4 text-white select-none font-bold"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-      <p className="absolute top-0 left-0 text-zinc-400 text-sm font-bold p-4 translate-y-1">
-        menu
-      </p>
-      <ul className="flex flex-col items-center justify-center w-full overflow-y-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <ul className="flex flex-col items-center justify-start w-full overflow-y-auto pt-[3.5rem]">
         {MENU_ITEMS.map((items, index) => {
           if (typeof items === "object") {
             return (

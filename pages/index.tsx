@@ -1,15 +1,15 @@
-import dynamic from "next/dynamic"
+import { useEffect, useState } from "react"
 import { GetServerSideProps } from "next"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
 import { printful } from "lib/printful-client"
 import { fetchMoreProducts } from "lib/fetchMoreProducts"
+import { FeaturedProduct, storeConfig } from "config/storeConfig"
 import { SEO } from "components/SEO"
 import { ProductPageProps } from "types/productPages"
-import { useEffect, useState } from "react"
 import { ProductPageLayout } from "components/ProductPageLayout"
-import { FeaturedProduct, storeConfig } from "config/storeConfig"
-import Link from "next/link"
 import SkeletonLoader from "components/SkeletonLoader"
-import Image from "next/image"
 import PrimaryLink from "components/PrimaryLink"
 const Heading = dynamic(() => import("../components/Heading"), { ssr: false })
 
@@ -138,7 +138,6 @@ const FeaturedProduct = ({ product }: { product: FeaturedProduct }) => {
 const IndexPage: React.FC<ProductPageProps> = ({ products }) => {
   const [offset, setOffset] = useState(0)
   const [currentProducts, setCurrentProducts] = useState([...products])
-  const [showFeaturedCategories, setShowFeaturedCategories] = useState(true)
 
   const [allProductsAreShown, setAllProductsAreShown] = useState(false)
 
@@ -181,18 +180,6 @@ const IndexPage: React.FC<ProductPageProps> = ({ products }) => {
     <ProductPageLayout noProducts={products.length < 1} isFeatured={false}>
       <SEO />
       <Heading />
-      {/* <ProductGrid
-        products={currentProducts.filter(
-          (product) => !product.name.includes("sticker")
-        )}
-      /> */}
-      {/* <div id="loadMore" /> */}
-
-      {/* <FeaturedCategories
-        products={storeConfig.featuredCategories}
-        setShowFeaturedProducts={setShowFeaturedCategories}
-        show={showFeaturedCategories}
-      /> */}
 
       <div className="w-full flex flex-col lg:grid lg:grid-cols-2 place-items-center gap-2 mt-2">
         {featuredProducts.map((product) => {
